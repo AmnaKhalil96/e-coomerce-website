@@ -1,0 +1,76 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Wishlist | Exclusive</title>
+  
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>tailwind.config = { theme: { extend: { fontFamily: { poppins: ['Poppins', 'sans-serif'] }, colors: { exclusive: '#DB4444', ink: '#000000', muted: '#7D8184', pale: '#F5F5F5', line: '#E8E8E8', music: '#00FF66' } } } };</script>
+  
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+</head>
+<body data-page="wishlist" class="m-0 min-h-screen bg-white font-poppins text-[16px] text-black antialiased">
+  
+  <div id="site-topbar"></div><div id="site-header"></div>
+  <!-- Saved items and the reference's recommended product row. -->
+  <main class="mx-auto w-[1170px] py-[66px] pb-[125px] max-[1200px]:w-[calc(100%-48px)] max-[680px]:w-[calc(100%-32px)] max-[680px]:py-[42px] max-[680px]:pb-[72px]">
+    <section aria-label="Saved products">
+      <div class="mb-[34px] flex items-center justify-between max-[680px]:mb-[30px]">
+        <h1 id="wishlist-heading" class="m-0 text-[20px] font-normal max-[680px]:text-[18px]">Wishlist (4)</h1>
+        <button id="move-all" class="h-14 rounded border border-[#999999] bg-white px-[42px] text-[16px] font-medium max-[680px]:h-[46px] max-[680px]:px-[18px] max-[680px]:text-[13px]" type="button">Move All To Bag</button>
+      </div>
+      <div id="saved-items" class="grid grid-cols-4 gap-x-[30px] gap-y-[54px] max-[1000px]:grid-cols-2 max-[680px]:gap-x-[14px] max-[680px]:gap-y-7 max-[390px]:grid-cols-1">
+        <!-- Saved product: Gucci duffle bag. -->
+        <article class="wishlist-card min-w-0">
+          <div class="relative grid h-[216px] place-items-center overflow-hidden rounded bg-pale max-[680px]:h-[clamp(145px,48vw,220px)] max-[390px]:h-[230px]"><img class="h-[82%] w-[82%] object-contain" src="../assets/images/products/gucci-duffle-bag.png" alt="Gucci duffle bag"><span class="absolute left-3 top-3 rounded bg-exclusive px-3 py-1 text-[12px] text-white">-35%</span><button class="remove-item absolute right-3 top-3 grid h-[34px] w-[34px] place-items-center rounded-full bg-white max-[680px]:right-2 max-[680px]:top-2 max-[680px]:h-[30px] max-[680px]:w-[30px]" type="button" aria-label="Remove Gucci duffle bag"><img class="h-[22px] w-[22px] max-[680px]:h-[19px] max-[680px]:w-[19px]" src="../assets/images/wishlist/delete-item.png" alt=""></button></div>
+          <button class="move-item flex h-10 w-full items-center justify-center gap-2 rounded-b bg-black text-[14px] text-white max-[680px]:h-9 max-[680px]:text-[12px]" type="button"><img class="h-5 w-5" src="../assets/images/wishlist/add-to-cart.png" alt="">Add To Cart</button>
+          <h2 class="mb-2 mt-4 text-[16px] font-medium max-[680px]:mb-[5px] max-[680px]:mt-[11px] max-[680px]:text-[14px]">Gucci duffle bag</h2><div class="text-[16px] text-exclusive max-[680px]:text-[14px]">$960 <span class="ml-[14px] text-[#888888] line-through max-[680px]:ml-[7px]">$1160</span></div>
+        </article>
+        <!-- Saved product: RGB liquid CPU Cooler. -->
+        <article class="wishlist-card min-w-0">
+          <div class="relative grid h-[216px] place-items-center overflow-hidden rounded bg-pale max-[680px]:h-[clamp(145px,48vw,220px)] max-[390px]:h-[230px]"><img class="h-[82%] w-[82%] object-contain" src="../assets/images/products/rgb-liquid-cpu-cooler.png" alt="RGB liquid CPU Cooler"><button class="remove-item absolute right-3 top-3 grid h-[34px] w-[34px] place-items-center rounded-full bg-white max-[680px]:right-2 max-[680px]:top-2 max-[680px]:h-[30px] max-[680px]:w-[30px]" type="button" aria-label="Remove RGB liquid CPU Cooler"><img class="h-[22px] w-[22px] max-[680px]:h-[19px] max-[680px]:w-[19px]" src="../assets/images/wishlist/delete-item.png" alt=""></button></div>
+          <button class="move-item flex h-10 w-full items-center justify-center gap-2 rounded-b bg-black text-[14px] text-white max-[680px]:h-9 max-[680px]:text-[12px]" type="button"><img class="h-5 w-5" src="../assets/images/wishlist/add-to-cart.png" alt="">Add To Cart</button>
+          <h2 class="mb-2 mt-4 text-[16px] font-medium max-[680px]:mb-[5px] max-[680px]:mt-[11px] max-[680px]:text-[14px]">RGB liquid CPU Cooler</h2><div class="text-[16px] text-exclusive max-[680px]:text-[14px]">$1960</div>
+        </article>
+        <!-- Saved product: GP11 Shooter USB Gamepad. -->
+        <article class="wishlist-card min-w-0">
+          <div class="relative grid h-[216px] place-items-center overflow-hidden rounded bg-pale max-[680px]:h-[clamp(145px,48vw,220px)] max-[390px]:h-[230px]"><img class="h-[82%] w-[82%] object-contain" src="../assets/images/products/gp11-shooter-gamepad.png" alt="GP11 Shooter USB Gamepad"><button class="remove-item absolute right-3 top-3 grid h-[34px] w-[34px] place-items-center rounded-full bg-white max-[680px]:right-2 max-[680px]:top-2 max-[680px]:h-[30px] max-[680px]:w-[30px]" type="button" aria-label="Remove GP11 Shooter USB Gamepad"><img class="h-[22px] w-[22px] max-[680px]:h-[19px] max-[680px]:w-[19px]" src="../assets/images/wishlist/delete-item.png" alt=""></button></div>
+          <button class="move-item flex h-10 w-full items-center justify-center gap-2 rounded-b bg-black text-[14px] text-white max-[680px]:h-9 max-[680px]:text-[12px]" type="button"><img class="h-5 w-5" src="../assets/images/wishlist/add-to-cart.png" alt="">Add To Cart</button>
+          <h2 class="mb-2 mt-4 text-[16px] font-medium max-[680px]:mb-[5px] max-[680px]:mt-[11px] max-[680px]:text-[14px]">GP11 Shooter USB Gamepad</h2><div class="text-[16px] text-exclusive max-[680px]:text-[14px]">$550</div>
+        </article>
+        <!-- Saved product: Quilted Satin Jacket. -->
+        <article class="wishlist-card min-w-0">
+          <div class="relative grid h-[216px] place-items-center overflow-hidden rounded bg-pale max-[680px]:h-[clamp(145px,48vw,220px)] max-[390px]:h-[230px]"><img class="h-[82%] w-[82%] object-contain" src="../assets/images/products/quilted-satin-jacket.png" alt="Quilted Satin Jacket"><button class="remove-item absolute right-3 top-3 grid h-[34px] w-[34px] place-items-center rounded-full bg-white max-[680px]:right-2 max-[680px]:top-2 max-[680px]:h-[30px] max-[680px]:w-[30px]" type="button" aria-label="Remove Quilted Satin Jacket"><img class="h-[22px] w-[22px] max-[680px]:h-[19px] max-[680px]:w-[19px]" src="../assets/images/wishlist/delete-item.png" alt=""></button></div>
+          <button class="move-item flex h-10 w-full items-center justify-center gap-2 rounded-b bg-black text-[14px] text-white max-[680px]:h-9 max-[680px]:text-[12px]" type="button"><img class="h-5 w-5" src="../assets/images/wishlist/add-to-cart.png" alt="">Add To Cart</button>
+          <h2 class="mb-2 mt-4 text-[16px] font-medium max-[680px]:mb-[5px] max-[680px]:mt-[11px] max-[680px]:text-[14px]">Quilted Satin Jacket</h2><div class="text-[16px] text-exclusive max-[680px]:text-[14px]">$750</div>
+        </article>
+      </div>
+    </section>
+
+    <!-- Reference recommendation row titled Just For You. -->
+    <section class="mt-14" aria-label="Recommended products">
+      <div class="mb-12 flex items-center justify-between max-[680px]:mb-7 max-[680px]:mt-[55px]">
+        <h2 class="relative m-0 pl-[30px] text-[20px] font-normal before:absolute before:left-0 before:top-[-9px] before:h-10 before:w-[18px] before:rounded-[3px] before:bg-exclusive">Just For You</h2>
+        <button class="h-14 rounded border border-[#999999] bg-white px-[42px] text-[16px] font-medium max-[680px]:h-[46px] max-[680px]:px-[18px] max-[680px]:text-[13px]" type="button">See All</button>
+      </div>
+      <div class="grid grid-cols-4 gap-x-[30px] gap-y-[54px] max-[1000px]:grid-cols-2 max-[680px]:gap-x-[14px] max-[680px]:gap-y-7 max-[390px]:grid-cols-1">
+        <!-- Recommendation: ASUS FHD Gaming Laptop. -->
+        <article class="min-w-0"><div class="relative grid h-[216px] place-items-center overflow-hidden rounded bg-pale max-[680px]:h-[clamp(145px,48vw,220px)] max-[390px]:h-[230px]"><img class="h-[82%] w-[82%] object-contain" src="../assets/images/products/asus-fhd-gaming-laptop.png" alt="ASUS FHD Gaming Laptop"><span class="absolute left-3 top-3 rounded bg-exclusive px-3 py-1 text-[12px] text-white">-35%</span><button class="absolute right-3 top-3 grid h-[34px] w-[34px] place-items-center rounded-full bg-white" type="button" aria-label="View ASUS FHD Gaming Laptop"><img class="h-[22px] w-[22px]" src="../assets/images/shared/quick-view.png" alt=""></button></div><button class="move-item flex h-10 w-full items-center justify-center gap-2 rounded-b bg-black text-[14px] text-white max-[680px]:h-9 max-[680px]:text-[12px]" type="button"><img class="h-5 w-5" src="../assets/images/wishlist/add-to-cart.png" alt="">Add To Cart</button><h3 class="mb-2 mt-4 text-[16px] font-medium max-[680px]:mb-[5px] max-[680px]:mt-[11px] max-[680px]:text-[14px]">ASUS FHD Gaming Laptop</h3><div class="text-[16px] text-exclusive max-[680px]:text-[14px]">$960 <span class="ml-[14px] text-[#888888] line-through">$1160</span></div></article>
+        <!-- Recommendation: IPS LCD Gaming Monitor. -->
+        <article class="min-w-0"><div class="relative grid h-[216px] place-items-center overflow-hidden rounded bg-pale max-[680px]:h-[clamp(145px,48vw,220px)] max-[390px]:h-[230px]"><img class="h-[82%] w-[82%] object-contain" src="../assets/images/products/ips-lcd-gaming-monitor.png" alt="IPS LCD Gaming Monitor"><button class="absolute right-3 top-3 grid h-[34px] w-[34px] place-items-center rounded-full bg-white" type="button" aria-label="View IPS LCD Gaming Monitor"><img class="h-[22px] w-[22px]" src="../assets/images/shared/quick-view.png" alt=""></button></div><button class="move-item flex h-10 w-full items-center justify-center gap-2 rounded-b bg-black text-[14px] text-white max-[680px]:h-9 max-[680px]:text-[12px]" type="button"><img class="h-5 w-5" src="../assets/images/wishlist/add-to-cart.png" alt="">Add To Cart</button><h3 class="mb-2 mt-4 text-[16px] font-medium max-[680px]:mb-[5px] max-[680px]:mt-[11px] max-[680px]:text-[14px]">IPS LCD Gaming Monitor</h3><div class="text-[16px] text-exclusive max-[680px]:text-[14px]">$1160</div></article>
+        <!-- Recommendation: HAVIT HV-G92 Gamepad. -->
+        <article class="min-w-0"><div class="relative grid h-[216px] place-items-center overflow-hidden rounded bg-pale max-[680px]:h-[clamp(145px,48vw,220px)] max-[390px]:h-[230px]"><img class="h-[82%] w-[82%] object-contain" src="../assets/images/products/havit-hv-g92-gamepad.png" alt="HAVIT HV-G92 Gamepad"><span class="absolute left-3 top-3 rounded bg-music px-3 py-1 text-[12px] text-black">NEW</span><button class="absolute right-3 top-3 grid h-[34px] w-[34px] place-items-center rounded-full bg-white" type="button" aria-label="View HAVIT HV-G92 Gamepad"><img class="h-[22px] w-[22px]" src="../assets/images/shared/quick-view.png" alt=""></button></div><button class="move-item flex h-10 w-full items-center justify-center gap-2 rounded-b bg-black text-[14px] text-white max-[680px]:h-9 max-[680px]:text-[12px]" type="button"><img class="h-5 w-5" src="../assets/images/wishlist/add-to-cart.png" alt="">Add To Cart</button><h3 class="mb-2 mt-4 text-[16px] font-medium max-[680px]:mb-[5px] max-[680px]:mt-[11px] max-[680px]:text-[14px]">HAVIT HV-G92 Gamepad</h3><div class="text-[16px] text-exclusive max-[680px]:text-[14px]">$560</div></article>
+        <!-- Recommendation: AK-900 Wired Keyboard. -->
+        <article class="min-w-0"><div class="relative grid h-[216px] place-items-center overflow-hidden rounded bg-pale max-[680px]:h-[clamp(145px,48vw,220px)] max-[390px]:h-[230px]"><img class="h-[82%] w-[82%] object-contain" src="../assets/images/products/ak-900-wired-keyboard.png" alt="AK-900 Wired Keyboard"><button class="absolute right-3 top-3 grid h-[34px] w-[34px] place-items-center rounded-full bg-white" type="button" aria-label="View AK-900 Wired Keyboard"><img class="h-[22px] w-[22px]" src="../assets/images/shared/quick-view.png" alt=""></button></div><button class="move-item flex h-10 w-full items-center justify-center gap-2 rounded-b bg-black text-[14px] text-white max-[680px]:h-9 max-[680px]:text-[12px]" type="button"><img class="h-5 w-5" src="../assets/images/wishlist/add-to-cart.png" alt="">Add To Cart</button><h3 class="mb-2 mt-4 text-[16px] font-medium max-[680px]:mb-[5px] max-[680px]:mt-[11px] max-[680px]:text-[14px]">AK-900 Wired Keyboard</h3><div class="text-[16px] text-exclusive max-[680px]:text-[14px]">$200</div></article>
+      </div>
+    </section>
+  </main>
+  
+  <div id="site-footer"></div>
+  
+  <script src="../js/layout.js"></script>
+  <script src="../js/wishlist.js"></script>
+</body>
+</html>

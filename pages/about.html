@@ -1,0 +1,213 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>
+      About | Exclusive
+    </title>
+    
+    <script src="https://cdn.tailwindcss.com">
+    </script>
+    <script>
+      tailwind.config = { theme: { extend: { fontFamily: { poppins: ['Poppins', 'sans-serif'] }, colors: { exclusive: '#DB4444', ink: '#000000', muted: '#7D8184', pale: '#F5F5F5', line: '#E8E8E8', music: '#00FF66' } } } };
+    </script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  </head>
+  <body data-page="about" class="m-0 min-h-screen bg-white font-poppins text-[16px] text-black antialiased">
+    
+    <div id="site-topbar">
+    </div>
+    <div id="site-header">
+    </div>
+    <!-- About story, company metrics, team, and service guarantees. -->
+    <main class="overflow-hidden pb-[100px]">
+      <!-- Breadcrumb remains aligned to the shared 1170px content area. -->
+      <nav class="mx-auto mt-[55px] flex w-[1170px] items-center gap-[14px] text-[14px] text-[#888888] max-[1200px]:w-[calc(100%-48px)] max-[680px]:mt-[34px] max-[680px]:w-[calc(100%-32px)] max-[680px]:text-[13px]" aria-label="Breadcrumb">
+        <a href="../index.html">
+          Home
+        </a>
+        <span>
+          /
+        </span>
+        <b class="font-normal text-[#111111]">
+          About
+        </b>
+      </nav>
+      <!-- Company story is paired with the provided shopping photograph. -->
+      <section class="ml-[max(calc((100%-1170px)/2),24px)] mt-[25px] grid w-[calc(100%-135px)] grid-cols-[500px_minmax(0,1fr)] items-center gap-[100px] max-[1200px]:ml-6 max-[1200px]:w-[calc(100%-48px)] max-[1200px]:grid-cols-[minmax(0,0.8fr)_minmax(0,1.2fr)] max-[1200px]:gap-10 max-[680px]:grid-cols-1 max-[680px]:gap-8">
+        <div class="max-w-[500px] max-[680px]:max-w-none">
+          <h1 class="mb-[30px] mt-0 text-[48px] font-medium leading-[1.2] tracking-[1px] max-[680px]:mb-5 max-[680px]:text-[36px]">
+            Our Story
+          </h1>
+          <p class="mb-6 mt-0 text-[16px] leading-[1.6]">
+            Launched in 2015, Exclusive is South Asia’s premier online shopping marketplace with an active presence in Bangladesh. Supported by wide range of tailored marketing, data and service solutions, Exclusive has 10,500 sellers and 300 brands and serves 3 millions customers across the region.
+          </p>
+          <p class="m-0 text-[16px] leading-[1.6]">
+            Exclusive has more than 1 Million products to offer, growing at a very fast. Exclusive offers a diverse assortment in categories ranging from consumer.
+          </p>
+        </div>
+        <img class="h-[430px] w-full object-cover object-center max-[680px]:h-auto max-[680px]:max-h-[430px]" src="../assets/images/about/shopping-story.jpg" alt="Two customers shopping together">
+      </section>
+      <!-- Four company figures use the matching supplied circular icons. -->
+      <section class="mx-auto mt-[96px] grid w-[1170px] grid-cols-4 gap-[30px] max-[1200px]:w-[calc(100%-48px)] max-[900px]:grid-cols-2 max-[680px]:mt-14 max-[680px]:w-[calc(100%-32px)] max-[680px]:gap-4 max-[480px]:grid-cols-1" aria-label="Company statistics">
+        <article class="flex h-[164px] flex-col items-center justify-center border border-[#BFBFBF] text-center">
+          <img class="mb-3 h-14 w-14" src="../assets/images/about/stats-active-sellers.png" alt="">
+          <strong class="text-[24px] font-semibold">
+            10.5k
+          </strong>
+          <p class="mb-0 mt-1 text-[13px]">
+            Sellers active our site
+          </p>
+        </article>
+        <article class="flex h-[164px] flex-col items-center justify-center rounded bg-exclusive text-center text-white shadow-[0_3px_10px_rgba(0,0,0,0.22)]">
+          <img class="mb-3 h-14 w-14" src="../assets/images/about/stats-monthly-product-sales.png" alt="">
+          <strong class="text-[24px] font-semibold">
+            33k
+          </strong>
+          <p class="mb-0 mt-1 text-[13px]">
+            Monthly Product Sale
+          </p>
+        </article>
+        <article class="flex h-[164px] flex-col items-center justify-center border border-[#BFBFBF] text-center">
+          <img class="mb-3 h-14 w-14" src="../assets/images/about/stats-active-customers.png" alt="">
+          <strong class="text-[24px] font-semibold">
+            45.5k
+          </strong>
+          <p class="mb-0 mt-1 text-[13px]">
+            Customer active in our site
+          </p>
+        </article>
+        <article class="flex h-[164px] flex-col items-center justify-center border border-[#BFBFBF] text-center">
+          <img class="mb-3 h-14 w-14" src="../assets/images/about/stats-annual-sales.png" alt="">
+          <strong class="text-[24px] font-semibold">
+            25k
+          </strong>
+          <p class="mb-0 mt-1 text-[13px]">
+            Anual gross sale in our site
+          </p>
+        </article>
+      </section>
+      <!-- The reference team row contains three portraits and five pager dots. -->
+      <section class="mx-auto mt-[98px] w-[1170px] max-[1200px]:w-[calc(100%-48px)] max-[680px]:mt-16 max-[680px]:w-[calc(100%-32px)]" aria-label="Our team">
+        <div class="grid grid-cols-3 gap-[30px] max-[680px]:grid-cols-1">
+          <article>
+            <div class="flex h-[430px] items-end justify-center overflow-hidden bg-pale">
+              <img class="h-full w-full object-contain object-bottom" src="../assets/images/about/tom-cruise.png" alt="Tom Cruise">
+            </div>
+            <h2 class="mb-1 mt-4 text-[24px] font-medium">
+              Tom Cruise
+            </h2>
+            <p class="mb-3 mt-0 text-[14px]">
+              Founder &amp; Chairman
+            </p>
+            <div class="flex gap-3">
+              <a href="#" aria-label="Tom Cruise on Twitter">
+                <img class="h-4 w-4" src="../assets/images/about/twitter.png" alt="">
+              </a>
+              <a href="#" aria-label="Tom Cruise on Instagram">
+                <img class="h-4 w-4" src="../assets/images/about/instagram.png" alt="">
+              </a>
+              <a href="#" aria-label="Tom Cruise on LinkedIn">
+                <img class="h-4 w-4" src="../assets/images/about/linkedin.png" alt="">
+              </a>
+            </div>
+          </article>
+          <article>
+            <div class="flex h-[430px] items-end justify-center overflow-hidden bg-pale">
+              <img class="h-full w-full object-contain object-bottom" src="../assets/images/about/emma-watson.png" alt="Emma Watson">
+            </div>
+            <h2 class="mb-1 mt-4 text-[24px] font-medium">
+              Emma Watson
+            </h2>
+            <p class="mb-3 mt-0 text-[14px]">
+              Managing Director
+            </p>
+            <div class="flex gap-3">
+              <a href="#" aria-label="Emma Watson on Twitter">
+                <img class="h-4 w-4" src="../assets/images/about/twitter.png" alt="">
+              </a>
+              <a href="#" aria-label="Emma Watson on Instagram">
+                <img class="h-4 w-4" src="../assets/images/about/instagram.png" alt="">
+              </a>
+              <a href="#" aria-label="Emma Watson on LinkedIn">
+                <img class="h-4 w-4" src="../assets/images/about/linkedin.png" alt="">
+              </a>
+            </div>
+          </article>
+          <article>
+            <div class="flex h-[430px] items-end justify-center overflow-hidden bg-pale">
+              <img class="h-full w-full object-contain object-bottom" src="../assets/images/about/will-smith.png" alt="Will Smith">
+            </div>
+            <h2 class="mb-1 mt-4 text-[24px] font-medium">
+              Will Smith
+            </h2>
+            <p class="mb-3 mt-0 text-[14px]">
+              Product Designer
+            </p>
+            <div class="flex gap-3">
+              <a href="#" aria-label="Will Smith on Twitter">
+                <img class="h-4 w-4" src="../assets/images/about/twitter.png" alt="">
+              </a>
+              <a href="#" aria-label="Will Smith on Instagram">
+                <img class="h-4 w-4" src="../assets/images/about/instagram.png" alt="">
+              </a>
+              <a href="#" aria-label="Will Smith on LinkedIn">
+                <img class="h-4 w-4" src="../assets/images/about/linkedin.png" alt="">
+              </a>
+            </div>
+          </article>
+        </div>
+        <div class="mt-[30px] flex justify-center gap-3" aria-label="Team carousel page">
+          <button class="h-[10px] w-[10px] rounded-full bg-[#BFBFBF]" aria-label="Team page 1">
+          </button>
+          <button class="h-[10px] w-[10px] rounded-full bg-[#BFBFBF]" aria-label="Team page 2">
+          </button>
+          <button class="h-[10px] w-[10px] rounded-full border-2 border-white bg-exclusive ring-1 ring-exclusive" aria-label="Team page 3" aria-current="true">
+          </button>
+          <button class="h-[10px] w-[10px] rounded-full bg-[#BFBFBF]" aria-label="Team page 4">
+          </button>
+          <button class="h-[10px] w-[10px] rounded-full bg-[#BFBFBF]" aria-label="Team page 5">
+          </button>
+        </div>
+      </section>
+      <!-- The three service promises repeat the supplied site-wide design. -->
+      <section class="mx-auto mt-[100px] flex w-[1170px] justify-center gap-[130px] pb-0 text-center max-[1200px]:w-[calc(100%-48px)] max-[900px]:gap-10 max-[680px]:mt-16 max-[680px]:w-[calc(100%-32px)] max-[680px]:flex-col max-[680px]:items-center" aria-label="Customer service promises">
+        <article class="w-[250px]">
+          <img class="mx-auto h-20 w-20" src="../assets/images/shared/service-delivery.png" alt="">
+          <h2 class="mb-[5px] mt-[18px] text-[16px] font-semibold">
+            FREE AND FAST DELIVERY
+          </h2>
+          <p class="m-0 text-[12px]">
+            Free delivery for all orders over $140
+          </p>
+        </article>
+        <article class="w-[250px]">
+          <img class="mx-auto h-20 w-20" src="../assets/images/shared/service-customer-support.png" alt="">
+          <h2 class="mb-[5px] mt-[18px] text-[16px] font-semibold">
+            24/7 CUSTOMER SERVICE
+          </h2>
+          <p class="m-0 text-[12px]">
+            Friendly 24/7 customer support
+          </p>
+        </article>
+        <article class="w-[250px]">
+          <img class="mx-auto h-20 w-20" src="../assets/images/shared/service-money-back.png" alt="">
+          <h2 class="mb-[5px] mt-[18px] text-[16px] font-semibold">
+            MONEY BACK GUARANTEE
+          </h2>
+          <p class="m-0 text-[12px]">
+            We return money within 30 days
+          </p>
+        </article>
+      </section>
+    </main>
+    
+    <div id="site-footer">
+    </div>
+    
+    <script src="../js/layout.js">
+    </script>
+  </body>
+</html>

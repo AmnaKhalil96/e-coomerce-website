@@ -1,0 +1,166 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>
+      Cart | Exclusive
+    </title>
+    
+    <script src="https://cdn.tailwindcss.com">
+    </script>
+    <script>
+      tailwind.config = { theme: { extend: { fontFamily: { poppins: ['Poppins', 'sans-serif'] }, colors: { exclusive: '#DB4444', ink: '#000000', muted: '#7D8184', pale: '#F5F5F5', line: '#E8E8E8', music: '#00FF66' } } } };
+    </script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  </head>
+  <body data-page="cart" class="m-0 min-h-screen bg-white font-poppins text-[16px] text-black antialiased">
+    
+    <div id="site-topbar">
+    </div>
+    <div id="site-header">
+    </div>
+    <!-- Cart breadcrumb, items, coupon controls, and order totals. -->
+    <main class="mx-auto w-[1170px] pb-[125px] max-[1200px]:w-[calc(100%-48px)] max-[680px]:w-[calc(100%-32px)]">
+      <nav class="mt-[82px] flex items-center gap-[14px] text-[14px] text-[#888888] max-[680px]:mt-[34px] max-[680px]:text-[13px]" aria-label="Breadcrumb">
+        <a href="../index.html">
+          Home
+        </a>
+        <span>
+          /
+        </span>
+        <b class="font-normal text-[#111111]">
+          Cart
+        </b>
+      </nav>
+      <!-- Column labels mirror the cart table in its reference. -->
+      <div class="mt-[72px] grid h-[72px] grid-cols-[1.2fr_1fr_1fr_.7fr] items-center rounded bg-white px-10 shadow-[0_1px_20px_rgba(0,0,0,0.06)] max-[680px]:hidden">
+        <span>
+          Product
+        </span>
+        <span>
+          Price
+        </span>
+        <span>
+          Quantity
+        </span>
+        <span class="text-right">
+          Subtotal
+        </span>
+      </div>
+      <!-- Cart items use the two products, quantities, and amounts in the reference. -->
+      <section id="cart-items" class="mt-10 space-y-[38px]" aria-label="Cart items">
+        <article class="cart-row grid min-h-[102px] grid-cols-[1.2fr_1fr_1fr_.7fr] items-center rounded bg-white px-10 shadow-[0_1px_20px_rgba(0,0,0,0.06)] max-[680px]:grid-cols-[1fr_auto] max-[680px]:gap-x-3 max-[680px]:gap-y-2 max-[680px]:px-4 max-[680px]:py-4" data-price="650">
+          <div class="flex items-center gap-5">
+            <button class="remove-cart-item grid h-[18px] w-[18px] place-items-center rounded-full bg-exclusive text-[14px] leading-none text-white" type="button" aria-label="Remove LCD Monitor">
+              ×
+            </button>
+            <img class="h-12 w-12 object-contain" src="../assets/images/products/ips-lcd-gaming-monitor.png" alt="LCD Monitor">
+            <span>
+              LCD Monitor
+            </span>
+          </div>
+          <span class="cart-unit-price">
+            $650
+          </span>
+          <label class="max-[680px]:justify-self-end">
+            <span class="sr-only">
+              LCD Monitor quantity
+            </span>
+            <input class="cart-quantity h-[46px] w-[74px] rounded border border-[#999999] px-2 text-center text-[14px]" type="number" min="1" value="1">
+          </label>
+          <span class="cart-subtotal text-right max-[680px]:col-start-2 max-[680px]:row-start-2">
+            $650
+          </span>
+        </article>
+        <article class="cart-row grid min-h-[102px] grid-cols-[1.2fr_1fr_1fr_.7fr] items-center rounded bg-white px-10 shadow-[0_1px_20px_rgba(0,0,0,0.06)] max-[680px]:grid-cols-[1fr_auto] max-[680px]:gap-x-3 max-[680px]:gap-y-2 max-[680px]:px-4 max-[680px]:py-4" data-price="550">
+          <div class="flex items-center gap-5">
+            <button class="remove-cart-item grid h-[18px] w-[18px] place-items-center rounded-full bg-exclusive text-[14px] leading-none text-white" type="button" aria-label="Remove H1 Gamepad">
+              ×
+            </button>
+            <img class="h-12 w-12 object-contain" src="../assets/images/products/havit-hv-g92-gamepad.png" alt="H1 Gamepad">
+            <span>
+              H1 Gamepad
+            </span>
+          </div>
+          <span class="cart-unit-price">
+            $550
+          </span>
+          <label class="max-[680px]:justify-self-end">
+            <span class="sr-only">
+              H1 Gamepad quantity
+            </span>
+            <input class="cart-quantity h-[46px] w-[74px] rounded border border-[#999999] px-2 text-center text-[14px]" type="number" min="1" value="2">
+          </label>
+          <span class="cart-subtotal text-right max-[680px]:col-start-2 max-[680px]:row-start-2">
+            $1100
+          </span>
+        </article>
+      </section>
+      <!-- Continue shopping and update actions. -->
+      <div class="mt-6 flex items-center justify-between">
+        <a class="flex h-14 items-center rounded border border-[#999999] px-12 text-[16px] font-medium max-[680px]:px-4 max-[680px]:text-[13px]" href="../index.html">
+          Return To Shop
+        </a>
+        <button id="update-cart" class="h-14 rounded border border-[#999999] px-12 text-[16px] font-medium max-[680px]:px-4 max-[680px]:text-[13px]" type="button">
+          Update Cart
+        </button>
+      </div>
+      <!-- Coupon entry and cart total remain side by side on desktop. -->
+      <div class="mt-20 grid grid-cols-[1fr_470px] items-start gap-8 max-[900px]:grid-cols-1">
+        <form id="coupon-form" class="flex items-center gap-4 max-[680px]:flex-wrap" novalidate>
+          <label class="sr-only" for="coupon-code">
+            Coupon Code
+          </label>
+          <input id="coupon-code" class="h-14 w-[300px] rounded border border-[#111111] px-6 text-[16px] outline-none max-[680px]:w-full" placeholder="Coupon Code">
+          <button class="h-14 rounded bg-exclusive px-12 text-[16px] text-white max-[680px]:w-full" type="submit">
+            Apply Coupon
+          </button>
+          <p id="coupon-message" class="hidden w-full text-[13px] text-exclusive" role="status" aria-live="polite">
+          </p>
+        </form>
+        <section class="rounded border-2 border-[#111111] p-[22px]" aria-labelledby="cart-total-title">
+          <h2 id="cart-total-title" class="mb-6 mt-0 text-[20px] font-medium">
+            Cart Total
+          </h2>
+          <div class="flex justify-between border-b border-[#999999] py-4 text-[14px]">
+            <span>
+              Subtotal:
+            </span>
+            <span id="cart-subtotal">
+              $1750
+            </span>
+          </div>
+          <div class="flex justify-between border-b border-[#999999] py-4 text-[14px]">
+            <span>
+              Shipping:
+            </span>
+            <span>
+              Free
+            </span>
+          </div>
+          <div class="flex justify-between py-4 text-[14px]">
+            <span>
+              Total:
+            </span>
+            <span id="cart-total">
+              $1750
+            </span>
+          </div>
+          <a class="mx-auto mt-1 flex h-14 w-[260px] items-center justify-center rounded bg-exclusive text-[16px] text-white max-[680px]:w-full" href="checkout.html">
+            Proceed to checkout
+          </a>
+        </section>
+      </div>
+    </main>
+    
+    <div id="site-footer">
+    </div>
+    
+    <script src="../js/layout.js">
+    </script>
+    <script src="../js/cart.js">
+    </script>
+  </body>
+</html>

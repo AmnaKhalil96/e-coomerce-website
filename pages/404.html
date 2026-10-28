@@ -1,0 +1,31 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>404 Not Found | Exclusive</title>
+  
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>tailwind.config = { theme: { extend: { fontFamily: { poppins: ['Poppins', 'sans-serif'] }, colors: { exclusive: '#DB4444', ink: '#000000', muted: '#7D8184', pale: '#F5F5F5', line: '#E8E8E8', music: '#00FF66' } } } };</script>
+  
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+</head>
+<body data-page="404" class="m-0 min-h-screen bg-white font-poppins text-[16px] text-black antialiased">
+  
+  <div id="site-topbar"></div><div id="site-header"></div>
+  <!-- Error breadcrumb, message, and return-to-home action. -->
+  <main class="relative mx-auto h-[702px] w-[1170px] max-[1200px]:w-[calc(100%-48px)] max-[680px]:h-[540px] max-[680px]:w-[calc(100%-32px)]">
+    <nav class="mt-[82px] flex items-center gap-[14px] text-[14px] text-[#888888] max-[680px]:mt-[34px] max-[680px]:text-[13px]" aria-label="Breadcrumb"><a href="../index.html">Home</a><span>/</span><b class="font-normal text-[#111111]">404 Error</b></nav>
+    <section class="absolute left-1/2 top-[60%] w-[min(850px,calc(100%-40px))] -translate-x-1/2 -translate-y-1/2 text-center max-[680px]:top-[48%]" aria-labelledby="error-title">
+      <h1 id="error-title" class="mb-[34px] mt-0 text-[96px] font-medium leading-[1.1] tracking-[2px] max-[680px]:mb-6 max-[680px]:text-[clamp(48px,14vw,76px)] max-[680px]:tracking-normal">404 Not Found</h1>
+      <p class="m-0 text-[18px] max-[680px]:text-[15px]">Your visited page not found. You may go home page.</p>
+      <a class="mt-20 inline-flex h-14 min-w-[255px] items-center justify-center rounded bg-exclusive text-[16px] text-white max-[680px]:mt-[42px]" href="../index.html">Back to home page</a>
+    </section>
+  </main>
+  
+  <div id="site-footer"></div>
+  
+  <script src="../js/layout.js"></script>
+</body>
+</html>

@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Contact | Exclusive</title>
+  
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>tailwind.config = { theme: { extend: { fontFamily: { poppins: ['Poppins', 'sans-serif'] }, colors: { exclusive: '#DB4444', ink: '#000000', muted: '#7D8184', pale: '#F5F5F5', line: '#E8E8E8', music: '#00FF66' } } } };</script>
+  
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+</head>
+<body data-page="contact" class="m-0 min-h-screen bg-white font-poppins text-[16px] text-black antialiased">
+  
+  <div id="site-topbar"></div><div id="site-header"></div>
+  <!-- Breadcrumb, contact information, and message form. -->
+  <main class="mx-auto w-[1170px] pb-[130px] max-[1200px]:w-[calc(100%-48px)] max-[680px]:w-[calc(100%-32px)] max-[680px]:pb-[70px]">
+    <nav class="mt-[82px] flex items-center gap-[14px] text-[14px] text-[#888888] max-[680px]:mt-[34px] max-[680px]:text-[13px]" aria-label="Breadcrumb"><a href="../index.html">Home</a><span>/</span><b class="font-normal text-[#111111]">Contact</b></nav>
+    <div class="mt-[70px] grid grid-cols-[340px_1fr] gap-[30px] max-[1000px]:grid-cols-[310px_1fr] max-[680px]:mt-8 max-[680px]:grid-cols-1 max-[680px]:gap-5">
+      <section class="rounded bg-white p-10 shadow-[0_1px_20px_rgba(0,0,0,0.07)] max-[1000px]:px-[25px] max-[1000px]:py-8 max-[680px]:px-[22px] max-[680px]:py-[26px]" aria-label="Contact information">
+        <div>
+          <h2 class="mb-[26px] mt-0 flex items-center gap-4 text-[18px] font-medium max-[680px]:mb-[18px]"><span class="grid h-10 w-10 shrink-0 place-items-center rounded-full bg-exclusive"><img class="h-[22px] w-[22px] object-contain brightness-0 invert" src="../assets/images/contact/phone.png" alt=""></span>Call To Us</h2>
+          <p class="mb-[17px] mt-0 text-[15px] leading-[1.5]">We are available 24/7, 7 days a week.</p>
+          <p class="mb-[17px] mt-0 text-[15px] leading-[1.5]">Phone: +8801611112222</p>
+        </div>
+        <hr class="my-[35px] border-0 border-t border-[#AAAAAA] max-[680px]:my-6">
+        <div>
+          <h2 class="mb-[26px] mt-0 flex items-center gap-4 text-[18px] font-medium max-[680px]:mb-[18px]"><span class="grid h-10 w-10 shrink-0 place-items-center rounded-full bg-exclusive"><img class="h-[22px] w-[22px] object-contain brightness-0 invert" src="../assets/images/contact/email.png" alt=""></span>Write To US</h2>
+          <p class="mb-[17px] mt-0 text-[15px] leading-[1.5]">Fill out our form and we will contact<br class="max-[680px]:hidden"> you within 24 hours.</p>
+          <p class="mb-[17px] mt-0 text-[15px] leading-[1.5]">Emails: customer@exclusive.com</p>
+          <p class="mb-0 mt-0 text-[15px] leading-[1.5]">Emails: support@exclusive.com</p>
+        </div>
+      </section>
+      <form id="contact-form" class="flex flex-col rounded bg-white p-10 shadow-[0_1px_20px_rgba(0,0,0,0.07)] max-[1000px]:px-[25px] max-[1000px]:py-8 max-[680px]:px-[18px] max-[680px]:py-6" novalidate>
+        <div class="grid grid-cols-3 gap-4 max-[1000px]:gap-[10px] max-[680px]:grid-cols-1 max-[680px]:gap-3">
+          <label class="flex h-[50px] min-w-0 items-center rounded bg-pale px-4 max-[1000px]:px-3"><span class="sr-only">Your Name</span><input id="contact-name" class="h-full w-full min-w-0 bg-transparent p-0 text-[16px] outline-none placeholder:text-[#7D8184] max-[1000px]:text-[14px]" type="text" placeholder="Your Name" required><span class="ml-[5px] text-exclusive">*</span></label>
+          <label class="flex h-[50px] min-w-0 items-center rounded bg-pale px-4 max-[1000px]:px-3"><span class="sr-only">Your Email</span><input id="contact-email" class="h-full w-full min-w-0 bg-transparent p-0 text-[16px] outline-none placeholder:text-[#7D8184] max-[1000px]:text-[14px]" type="email" placeholder="Your Email" required><span class="ml-[5px] text-exclusive">*</span></label>
+          <label class="flex h-[50px] min-w-0 items-center rounded bg-pale px-4 max-[1000px]:px-3"><span class="sr-only">Your Phone</span><input id="contact-phone" class="h-full w-full min-w-0 bg-transparent p-0 text-[16px] outline-none placeholder:text-[#7D8184] max-[1000px]:text-[14px]" type="tel" placeholder="Your Phone" required><span class="ml-[5px] text-exclusive">*</span></label>
+        </div>
+        <label class="mt-[30px] block max-[680px]:mt-4"><span class="sr-only">Your Massage</span><textarea id="contact-message" class="h-[200px] w-full resize-y rounded border-0 bg-pale px-[18px] py-[15px] text-[16px] outline-exclusive placeholder:text-[#7D8184] max-[680px]:h-[170px]" placeholder="Your Massage" required></textarea></label>
+        <p id="contact-feedback" class="mt-4 hidden text-[14px] text-exclusive" role="alert" aria-live="polite"></p>
+        <button class="mt-9 self-end rounded bg-exclusive px-12 py-4 text-white max-[680px]:mt-5 max-[680px]:w-full" type="submit">Send Massage</button>
+      </form>
+    </div>
+  </main>
+  
+  <div id="site-footer"></div>
+  
+  <script src="../js/layout.js"></script>
+  <script src="../js/contact.js"></script>
+</body>
+</html>

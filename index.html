@@ -1,0 +1,164 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Exclusive | ShopNow</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>tailwind.config = { theme: { extend: { fontFamily: { poppins: ['Poppins', 'sans-serif'] }, colors: { exclusive: '#DB4444', ink: '#000000', muted: '#7D8184', pale: '#F5F5F5', line: '#E8E8E8', music: '#00FF66' } } } };</script>
+  <!-- Load the reference font. -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+</head>
+<body class="m-0 min-h-screen w-full overflow-x-clip bg-white font-poppins text-[14px] font-normal text-ink antialiased">
+  <!-- Home-page adjustment: clip horizontal overflow around all document content while leaving the fixed button outside. -->
+  <div class="w-full overflow-x-clip">
+  <div id="site-topbar" class="[&>div]:h-[50px]"></div>
+  <div id="site-header"></div>
+
+  <!-- Main page content follows the order of the supplied home reference. -->
+  <main>
+    <!-- Hero category list and iPhone promotion slider. -->
+    <!-- Home-page adjustment: align the 344px hero with the header and extend its slider past the content edge. -->
+    <section class="relative mx-auto grid h-[400px] w-[1170px] grid-cols-[270px_1fr] pt-0" aria-label="Featured promotion">
+      <aside class="flex flex-col gap-[13px] border-r border-line pr-[22px] pt-[3px] text-[13px]">
+        <a class="flex justify-between" href="#">Woman's Fashion <span class="text-[20px] leading-[15px]">›</span></a>
+        <a class="flex justify-between" href="#">Men's Fashion <span class="text-[20px] leading-[15px]">›</span></a>
+        <a href="#">Electronics</a><a href="#">Home &amp; Lifestyle</a><a href="#">Medicine</a>
+        <a href="#">Sports &amp; Outdoor</a><a href="#">Baby's &amp; Toys</a><a href="#">Groceries &amp; Pets</a><a href="#">Health &amp; Beauty</a>
+      </aside>
+      <!-- Home-page adjustment: the 892px hero starts 352px into the 1170px content grid. -->
+      <div class="relative ml-[82px] flex h-[344px] w-[892px] shrink-0 items-center overflow-hidden bg-[#050505] px-[65px] py-[55px] text-white">
+        <img class="absolute left-[66px] top-[35px] h-[34px] w-[34px] object-contain" src="assets/images/home/apple-logo.png" alt="Apple">
+        <div class="z-10">
+          <small class="text-[14px]">iPhone 14 Series</small>
+          <h1 class="my-[18px] text-[48px] font-medium leading-[1.2]">Up to 10%<br>off Voucher</h1>
+          <a class="text-[14px] text-white underline underline-offset-4" href="#">Shop Now <span aria-hidden="true">&rarr;</span></a>
+        </div>
+        <img class="absolute right-0 top-0 h-[344px] w-[520px] object-contain" src="assets/images/home/iphone-14-series.jpg" alt="iPhone 14">
+        <!-- Home-page adjustment: keep the dots centered inside the slider with slide three selected. -->
+        <div class="absolute bottom-[14px] left-1/2 flex -translate-x-1/2 gap-[10px]" aria-label="Choose slide">
+        <button class="hero-dot h-[12px] w-[12px] rounded-full border-2 border-white bg-[#888888]" aria-label="Slide 1"></button>
+        <button class="hero-dot h-[12px] w-[12px] rounded-full border-2 border-white bg-[#888888]" aria-label="Slide 2"></button>
+        <button class="hero-dot h-[12px] w-[12px] rounded-full border-2 border-white bg-exclusive ring-2 ring-white" aria-label="Slide 3" aria-current="true"></button>
+        <button class="hero-dot h-[12px] w-[12px] rounded-full border-2 border-white bg-[#888888]" aria-label="Slide 4"></button>
+        <button class="hero-dot h-[12px] w-[12px] rounded-full border-2 border-white bg-[#888888]" aria-label="Slide 5"></button>
+        </div>
+      </div>
+    </section>
+
+    <!-- Flash sale products and live countdown. -->
+    <section class="relative mx-auto w-[1170px] border-b border-line pb-[60px] pt-[128px]">
+      <!-- Home-page adjustment: align each red label bar and label text with the reference spacing. -->
+      <p class="mb-[30px] flex items-center gap-4 text-[16px] font-semibold leading-none text-exclusive"><span class="h-10 w-5 shrink-0 rounded-[4px] bg-exclusive"></span><span>Today's</span></p>
+      <div class="mb-[30px] flex items-center gap-[30px]">
+        <h2 class="m-0 text-[36px] font-semibold leading-[1.25]">Flash Sales</h2>
+        <div class="flex items-center gap-4 text-[27px] font-semibold" data-countdown="flash">
+          <span class="flex flex-col"><small class="text-[11px] font-normal">Days</small><b data-time="days">03</b></span>:
+          <span class="flex flex-col"><small class="text-[11px] font-normal">Hours</small><b data-time="hours">23</b></span>:
+          <span class="flex flex-col"><small class="text-[11px] font-normal">Minutes</small><b data-time="minutes">19</b></span>:
+          <span class="flex flex-col"><small class="text-[11px] font-normal">Seconds</small><b data-time="seconds">56</b></span>
+        </div>
+        <div class="ml-auto flex gap-3">
+          <button class="flex h-[46px] w-[46px] items-center justify-center rounded-full bg-pale" data-scroll="flash-track" data-dir="-1" aria-label="Scroll products left"><img class="h-5 w-5" src="assets/images/shared/arrow-left.png" alt=""></button>
+          <button class="flex h-[46px] w-[46px] items-center justify-center rounded-full bg-pale" data-scroll="flash-track" data-dir="1" aria-label="Scroll products right"><img class="h-5 w-5" src="assets/images/shared/arrow-right.png" alt=""></button>
+        </div>
+      </div>
+      <!-- Home-page adjustment: make the flash carousel reach the 1440px viewport edge. -->
+      <div class="flex w-[calc(100%_+_135px)] gap-[30px] overflow-x-auto [scrollbar-width:none] [&::-webkit-scrollbar]:hidden [&>article>h3]:text-[16px] [&>article>div:nth-of-type(2)]:text-[16px]" id="flash-track"></div>
+      <button class="mx-auto mt-[35px] block rounded-[3px] bg-exclusive px-[34px] py-[15px] text-[14px] text-white">View All Products</button>
+    </section>
+
+    <!-- Best selling header and six selectable categories. -->
+    <section class="mx-auto w-[1170px] pb-[50px] pt-[55px]">
+      <!-- Home-page adjustment: use the same flex label row and heading gap as the other sections. -->
+      <p class="mb-[30px] flex items-center gap-4 text-[16px] font-semibold leading-none text-exclusive"><span class="h-10 w-5 shrink-0 rounded-[4px] bg-exclusive"></span><span>This Month</span></p>
+      <div class="mb-10 flex items-center justify-between"><h2 class="m-0 text-[36px] font-semibold leading-[1.25]">Best Selling Products</h2><button class="rounded-[3px] bg-exclusive px-[37px] py-[14px] text-white">View All</button></div>
+      <!-- Home-page adjustment: normalize icon brightness for inactive and selected category boxes. -->
+      <div class="grid grid-cols-6 gap-6" id="category-tiles">
+        <button class="category-tile flex h-[150px] flex-col items-center justify-center gap-3 border border-[#DDDDDD] bg-white text-[14px]"><img class="h-12 w-12 brightness-0" src="assets/images/home/category-phone.png" alt="">Phones</button>
+        <button class="category-tile flex h-[150px] flex-col items-center justify-center gap-3 border border-[#DDDDDD] bg-white text-[14px]"><img class="h-12 w-12 brightness-0" src="assets/images/home/category-computer.png" alt="">Computers</button>
+        <button class="category-tile flex h-[150px] flex-col items-center justify-center gap-3 border border-[#DDDDDD] bg-white text-[14px]"><img class="h-12 w-12 brightness-0" src="assets/images/home/category-smartwatch.png" alt="">SmartWatch</button>
+        <button class="category-tile flex h-[150px] flex-col items-center justify-center gap-3 border border-exclusive bg-exclusive text-[14px] text-white"><img class="h-12 w-12 brightness-0 invert" src="assets/images/home/category-camera.png" alt="">Camera</button>
+        <button class="category-tile flex h-[150px] flex-col items-center justify-center gap-3 border border-[#DDDDDD] bg-white text-[14px]"><img class="h-12 w-12 brightness-0" src="assets/images/home/category-headphones.png" alt="">HeadPhones</button>
+        <button class="category-tile flex h-[150px] flex-col items-center justify-center gap-3 border border-[#DDDDDD] bg-white text-[14px]"><img class="h-12 w-12 brightness-0" src="assets/images/home/category-gaming.png" alt="">Gaming</button>
+      </div>
+    </section>
+
+    <!-- Browse by category product carousel. -->
+    <!-- Home-page adjustment: offset Browse By Category 20px and preserve the 220px banner gap. -->
+    <section class="relative left-[20px] mx-auto w-[1170px] pb-[220px] pt-[45px]">
+      <!-- Home-page adjustment: keep the Browse label aligned with the shared 20x40 label treatment. -->
+      <p class="mb-[30px] flex items-center gap-4 text-[16px] font-semibold leading-none text-exclusive"><span class="h-10 w-5 shrink-0 rounded-[4px] bg-exclusive"></span><span>Categories</span></p>
+      <div class="mb-[35px] flex items-center"><h2 class="m-0 text-[36px] font-semibold leading-[1.25]">Browse By Category</h2><div class="ml-auto flex gap-3">
+        <button class="flex h-[46px] w-[46px] items-center justify-center rounded-full bg-pale" data-scroll="browse-track" data-dir="-1" aria-label="Scroll products left"><img class="h-5 w-5" src="assets/images/shared/arrow-left.png" alt=""></button>
+        <button class="flex h-[46px] w-[46px] items-center justify-center rounded-full bg-pale" data-scroll="browse-track" data-dir="1" aria-label="Scroll products right"><img class="h-5 w-5" src="assets/images/shared/arrow-right.png" alt=""></button>
+      </div></div>
+      <div class="flex gap-[30px] overflow-x-auto [scrollbar-width:none] [&::-webkit-scrollbar]:hidden [&>article>h3]:text-[16px] [&>article>div:nth-of-type(2)]:text-[16px]" id="browse-track"></div>
+    </section>
+
+    <!-- Music banner with live circular countdown. -->
+    <section class="relative mx-auto mb-[70px] flex h-[500px] w-[1170px] items-center overflow-hidden bg-[#050505] px-[60px] py-[55px] text-white">
+      <div class="z-10"><strong class="text-[16px] text-music">Categories</strong><h2 class="my-[25px] text-[40px] font-semibold leading-[1.2]">Enhance Your<br>Music Experience</h2>
+        <div class="flex gap-4" data-countdown="music">
+          <span class="flex h-[62px] w-[62px] flex-col items-center justify-center rounded-full bg-white text-[18px] font-semibold text-black"><b data-time="days">23</b><small class="text-[10px] font-normal">Days</small></span>
+          <span class="flex h-[62px] w-[62px] flex-col items-center justify-center rounded-full bg-white text-[18px] font-semibold text-black"><b data-time="hours">05</b><small class="text-[10px] font-normal">Hours</small></span>
+          <span class="flex h-[62px] w-[62px] flex-col items-center justify-center rounded-full bg-white text-[18px] font-semibold text-black"><b data-time="minutes">59</b><small class="text-[10px] font-normal">Minutes</small></span>
+          <span class="flex h-[62px] w-[62px] flex-col items-center justify-center rounded-full bg-white text-[18px] font-semibold text-black"><b data-time="seconds">35</b><small class="text-[10px] font-normal">Seconds</small></span>
+        </div>
+        <button class="mt-7 rounded-[3px] bg-music px-[30px] py-[13px] font-medium text-black">Buy Now!</button>
+      </div>
+      <!-- Home-page adjustment: enlarge the supplied speaker art until the speaker itself fills about 560px. -->
+      <img class="absolute -right-[100px] -top-[155px] h-[770px] w-[770px] object-contain" src="assets/images/home/jbl-speaker-banner.png" alt="Black portable speaker">
+    </section>
+
+    <!-- Explore products in a two-row product grid. -->
+    <section class="mx-auto w-[1170px] pb-[100px]">
+      <!-- Home-page adjustment: keep the Explore label aligned with the shared 20x40 label treatment. -->
+      <p class="mb-[30px] flex items-center gap-4 text-[16px] font-semibold leading-none text-exclusive"><span class="h-10 w-5 shrink-0 rounded-[4px] bg-exclusive"></span><span>Our Products</span></p>
+      <div class="mb-[35px] flex items-center"><h2 class="m-0 text-[36px] font-semibold leading-[1.25]">Explore Our Products</h2><div class="ml-auto flex gap-3">
+        <button class="flex h-[46px] w-[46px] items-center justify-center rounded-full bg-pale" data-scroll="explore-track" data-dir="-1" aria-label="Scroll products left"><img class="h-5 w-5" src="assets/images/shared/arrow-left.png" alt=""></button>
+        <button class="flex h-[46px] w-[46px] items-center justify-center rounded-full bg-pale" data-scroll="explore-track" data-dir="1" aria-label="Scroll products right"><img class="h-5 w-5" src="assets/images/shared/arrow-right.png" alt=""></button>
+      </div></div>
+      <!-- Home-page adjustment: utility selectors align Explore product prices and ratings, with swatches below. -->
+      <div class="grid grid-cols-4 gap-x-[30px] gap-y-[55px] [&>article]:grid [&>article]:grid-cols-[max-content_1fr] [&>article]:gap-x-2 [&>article>div:first-child]:col-span-2 [&>article>h3]:col-span-2 [&>article>div:nth-of-type(2)]:row-start-3 [&>article>div:nth-of-type(3)]:row-start-3 [&>article>div:nth-of-type(3)]:col-start-2 [&>article>div:nth-of-type(3)]:mt-0 [&>article>div:nth-of-type(4)]:col-span-2 [&>article>div:nth-of-type(4)]:row-start-4 [&>article>h3]:text-[16px] [&>article>div:nth-of-type(2)]:text-[16px]" id="explore-track"></div>
+      <button class="mx-auto mt-[35px] block rounded-[3px] bg-exclusive px-[34px] py-[15px] text-[14px] text-white">View All Products</button>
+    </section>
+
+    <!-- New arrival feature tiles. -->
+    <!-- Home-page adjustment: match the reference's two-column feature layout and tile dimensions. -->
+    <section class="mx-auto w-[1170px] pb-[100px] pt-5">
+      <!-- Home-page adjustment: keep the Featured label aligned with the shared 20x40 label treatment. -->
+      <p class="mb-[30px] flex items-center gap-4 text-[16px] font-semibold leading-none text-exclusive"><span class="h-10 w-5 shrink-0 rounded-[4px] bg-exclusive"></span><span>Featured</span></p>
+      <h2 class="mb-10 text-[36px] font-semibold leading-[1.25]">New Arrival</h2>
+      <div class="grid h-[600px] grid-cols-[570px_570px] grid-rows-[284px_284px] gap-[30px]">
+        <article class="relative row-span-2 h-[600px] overflow-hidden bg-[#050505] text-white"><img class="absolute inset-0 h-full w-full object-cover object-center" src="assets/images/home/playstation-5-tile.png" alt="PlayStation 5"><div class="absolute bottom-[24px] left-[24px] z-10"><h3 class="mb-[7px] text-[24px] font-medium">PlayStation 5</h3><p class="mb-3 text-[12px]">Black and White version of the PS5<br>coming out on sale.</p><a class="text-[13px] underline underline-offset-4" href="#">Shop Now</a></div></article>
+        <div class="grid grid-rows-[284px_284px] gap-[30px]">
+          <article class="relative overflow-hidden bg-[#050505] text-white"><img class="absolute right-0 top-0 h-full w-[66%] object-cover object-left" src="assets/images/home/womens-collection-tile.jpg" alt="Women's Collections"><div class="absolute bottom-[24px] left-[24px] z-10"><h3 class="mb-[7px] text-[24px] font-medium">Women's Collections</h3><p class="mb-3 text-[12px]">Featured woman collections that<br>give you another vibe.</p><a class="text-[13px] underline underline-offset-4" href="#">Shop Now</a></div></article>
+          <div class="grid grid-cols-2 gap-[30px]">
+            <article class="relative overflow-hidden bg-[#050505] text-white"><img class="absolute right-0 top-0 h-[78%] w-[75%] object-contain" src="assets/images/home/amazon-wireless-speakers-tile.png" alt="Speakers"><div class="absolute bottom-[24px] left-[24px] z-10"><h3 class="mb-[7px] text-[16px] font-medium">Speakers</h3><p class="mb-3 text-[11px]">Amazon wireless speakers</p><a class="text-[12px] underline underline-offset-4" href="#">Shop Now</a></div></article>
+            <article class="relative overflow-hidden bg-[#050505] text-white"><img class="absolute right-0 top-0 h-[78%] w-[75%] object-contain" src="assets/images/home/gucci-perfume-tile.png" alt="Perfume"><div class="absolute bottom-[24px] left-[24px] z-10"><h3 class="mb-[7px] text-[16px] font-medium">Perfume</h3><p class="mb-3 text-[11px]">GUCCI INTENSE OUD EDP</p><a class="text-[12px] underline underline-offset-4" href="#">Shop Now</a></div></article>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Three customer service promises. -->
+    <!-- Home-page adjustment: place the three service centers 343px apart. -->
+    <section class="mx-auto flex w-[1170px] justify-center gap-[93px] pb-[100px] pt-5 text-center">
+      <article class="w-[250px]"><img class="mx-auto h-20 w-20" src="assets/images/shared/service-delivery.png" alt=""><h3 class="mb-[5px] mt-[18px] text-[16px] font-semibold">FREE AND FAST DELIVERY</h3><p class="m-0 text-[12px]">Free delivery for all orders over $140</p></article>
+      <article class="w-[250px]"><img class="mx-auto h-20 w-20" src="assets/images/shared/service-customer-support.png" alt=""><h3 class="mb-[5px] mt-[18px] text-[16px] font-semibold">24/7 CUSTOMER SERVICE</h3><p class="m-0 text-[12px]">Friendly 24/7 customer support</p></article>
+      <article class="w-[250px]"><img class="mx-auto h-20 w-20" src="assets/images/shared/service-money-back.png" alt=""><h3 class="mb-[5px] mt-[18px] text-[16px] font-semibold">MONEY BACK GUARANTEE</h3><p class="m-0 text-[12px]">We return money within 30 days</p></article>
+    </section>
+  </main>
+
+  <!-- Shared footer is inserted by layout.js. -->
+  <div id="site-footer"></div>
+  </div>
+  <!-- Back-to-top control appears after the reader scrolls down. -->
+  <button id="to-top" class="fixed bottom-5 right-5 hidden h-10 w-10 items-center justify-center rounded-full bg-pale" aria-label="Scroll to top"><img class="h-5 w-5" src="assets/images/shared/arrow-up.png" alt=""></button>
+  <!-- Page behavior is kept in its own vanilla JavaScript file. -->
+  <script src="js/layout.js"></script>
+  <script src="js/home.js"></script>
+</body>
+</html>

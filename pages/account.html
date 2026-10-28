@@ -1,0 +1,153 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>
+      My Account | Exclusive
+    </title>
+    
+    <script src="https://cdn.tailwindcss.com">
+    </script>
+    <script>
+      tailwind.config = { theme: { extend: { fontFamily: { poppins: ['Poppins', 'sans-serif'] }, colors: { exclusive: '#DB4444', ink: '#000000', muted: '#7D8184', pale: '#F5F5F5', line: '#E8E8E8', music: '#00FF66' } } } };
+    </script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  </head>
+  <body data-page="account" class="m-0 min-h-screen bg-white font-poppins text-[16px] text-black antialiased">
+    
+    <div id="site-topbar">
+    </div>
+    <div id="site-header">
+    </div>
+    <!-- Account breadcrumb and profile greeting. -->
+    <main class="mx-auto w-[1170px] pb-[150px] max-[1200px]:w-[calc(100%-48px)] max-[680px]:w-[calc(100%-32px)] max-[680px]:pb-20">
+      <div class="mt-[82px] flex items-center justify-between text-[14px] max-[680px]:mt-[34px]">
+        <nav class="flex items-center gap-[14px] text-[#888888]" aria-label="Breadcrumb">
+          <a href="../index.html">
+            Home
+          </a>
+          <span>
+            /
+          </span>
+          <b class="font-normal text-[#111111]">
+            My Account
+          </b>
+        </nav>
+        <p class="m-0 max-[680px]:hidden">
+          Welcome!
+          <span class="text-exclusive">
+            Md Rimel
+          </span>
+        </p>
+      </div>
+      <!-- Sidebar and profile form follow the account reference's two-column layout. -->
+      <div class="mt-[98px] grid grid-cols-[240px_minmax(0,1fr)] gap-[88px] max-[1000px]:grid-cols-[200px_minmax(0,1fr)] max-[1000px]:gap-10 max-[680px]:mt-10 max-[680px]:grid-cols-1 max-[680px]:gap-8">
+        <aside id="account-menu" class="pt-1" aria-label="Account navigation">
+          <h2 class="mb-4 mt-0 text-[16px] font-semibold">
+            Manage My Account
+          </h2>
+          <ul class="mb-7 ml-[38px] mt-0 list-none space-y-[12px] p-0 text-[16px]">
+            <li>
+              <a class="text-exclusive" href="#profile-form">
+                My Profile
+              </a>
+            </li>
+            <li>
+              <a class="text-[#7D8184]" href="#account-menu">
+                Address Book
+              </a>
+            </li>
+            <li>
+              <a class="text-[#7D8184]" href="#account-menu">
+                My Payment Options
+              </a>
+            </li>
+          </ul>
+          <h2 class="mb-4 mt-0 text-[16px] font-semibold">
+            My Orders
+          </h2>
+          <ul class="mb-7 ml-[38px] mt-0 list-none space-y-[12px] p-0 text-[16px]">
+            <li>
+              <a class="text-[#7D8184]" href="#account-menu">
+                My Returns
+              </a>
+            </li>
+            <li>
+              <a class="text-[#7D8184]" href="#account-menu">
+                My Cancellations
+              </a>
+            </li>
+          </ul>
+          <h2 class="m-0 text-[16px] font-semibold">
+            <a href="wishlist.html">
+              My Wish List
+            </a>
+          </h2>
+        </aside>
+        <!-- Profile fields are prefilled with the reference's visible account details. -->
+        <form id="profile-form" class="rounded bg-white px-[85px] py-[40px] shadow-[0_1px_20px_rgba(0,0,0,0.06)] max-[1100px]:px-10 max-[680px]:px-5 max-[680px]:py-7" novalidate>
+          <h1 class="mb-5 mt-0 text-[22px] font-medium text-exclusive">
+            Edit Your Profile
+          </h1>
+          <div class="grid grid-cols-2 gap-x-[50px] gap-y-6 max-[1000px]:gap-x-6 max-[680px]:grid-cols-1">
+            <label class="block text-[16px]">
+              First Name
+              <input id="first-name" class="mt-2 block h-[54px] w-full rounded bg-pale px-4 text-[16px] outline-none focus:ring-1 focus:ring-exclusive" type="text" value="Md" required>
+            </label>
+            <label class="block text-[16px]">
+              Last Name
+              <input id="last-name" class="mt-2 block h-[54px] w-full rounded bg-pale px-4 text-[16px] outline-none focus:ring-1 focus:ring-exclusive" type="text" value="Rimel" required>
+            </label>
+            <label class="block text-[16px]">
+              Email
+              <input id="profile-email" class="mt-2 block h-[54px] w-full rounded bg-pale px-4 text-[16px] outline-none focus:ring-1 focus:ring-exclusive" type="email" value="rimel111@gmail.com" required>
+            </label>
+            <label class="block text-[16px]">
+              Address
+              <input id="profile-address" class="mt-2 block h-[54px] w-full rounded bg-pale px-4 text-[16px] outline-none focus:ring-1 focus:ring-exclusive" type="text" value="Kingston, 5236, United State" required>
+            </label>
+          </div>
+          <fieldset class="mt-[26px] border-0 p-0">
+            <legend class="mb-4 text-[16px]">
+              Password Changes
+            </legend>
+            <div class="flex flex-col gap-4">
+              <label class="sr-only" for="current-password">
+                Current Password
+              </label>
+              <input id="current-password" class="h-[54px] w-full rounded bg-pale px-4 text-[16px] outline-none focus:ring-1 focus:ring-exclusive" type="password" placeholder="Current Password" autocomplete="current-password">
+              <label class="sr-only" for="new-password">
+                New Password
+              </label>
+              <input id="new-password" class="h-[54px] w-full rounded bg-pale px-4 text-[16px] outline-none focus:ring-1 focus:ring-exclusive" type="password" placeholder="New Password" autocomplete="new-password">
+              <label class="sr-only" for="confirm-password">
+                Confirm New Password
+              </label>
+              <input id="confirm-password" class="h-[54px] w-full rounded bg-pale px-4 text-[16px] outline-none focus:ring-1 focus:ring-exclusive" type="password" placeholder="Confirm New Password" autocomplete="new-password">
+            </div>
+          </fieldset>
+          <p id="profile-feedback" class="mt-4 hidden text-[13px] text-exclusive" role="alert" aria-live="polite">
+          </p>
+          <div class="mt-[25px] flex items-center justify-end gap-8">
+            <button class="bg-transparent text-[16px]" type="reset">
+              Cancel
+            </button>
+            <button class="h-[60px] w-[228px] rounded bg-exclusive text-[16px] text-white max-[680px]:w-[180px]" type="submit">
+              Save Changes
+            </button>
+          </div>
+        </form>
+      </div>
+    </main>
+    
+    <div id="site-footer">
+    </div>
+    
+    <script src="../js/layout.js">
+    </script>
+    <script src="../js/account.js">
+    </script>
+  </body>
+</html>
