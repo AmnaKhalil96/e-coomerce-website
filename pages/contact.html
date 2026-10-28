@@ -11,14 +11,15 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 </head>
-<body data-page="contact" class="m-0 min-h-screen bg-white font-poppins text-[16px] text-black antialiased">
+<body data-page="contact" class="m-0 min-h-screen bg-white font-poppins text-[16px] text-black antialiased overflow-x-clip">
   
   <div id="site-topbar"></div><div id="site-header"></div>
   <!-- Breadcrumb, contact information, and message form. -->
-  <main class="mx-auto w-[1170px] pb-[130px] max-[1200px]:w-[calc(100%-48px)] max-[680px]:w-[calc(100%-32px)] max-[680px]:pb-[70px]">
+      <!-- Contact details and form stack, with one input per row, on compact screens. -->
+<main class="mx-auto w-full max-w-[1170px] px-4 pb-16 sm:px-6 sm:pb-20 xl:w-[1170px] xl:px-0 xl:pb-[130px]">
     <nav class="mt-[82px] flex items-center gap-[14px] text-[14px] text-[#888888] max-[680px]:mt-[34px] max-[680px]:text-[13px]" aria-label="Breadcrumb"><a href="../index.html">Home</a><span>/</span><b class="font-normal text-[#111111]">Contact</b></nav>
-    <div class="mt-[70px] grid grid-cols-[340px_1fr] gap-[30px] max-[1000px]:grid-cols-[310px_1fr] max-[680px]:mt-8 max-[680px]:grid-cols-1 max-[680px]:gap-5">
-      <section class="rounded bg-white p-10 shadow-[0_1px_20px_rgba(0,0,0,0.07)] max-[1000px]:px-[25px] max-[1000px]:py-8 max-[680px]:px-[22px] max-[680px]:py-[26px]" aria-label="Contact information">
+    <div class="mt-8 grid grid-cols-1 gap-5 sm:mt-10 sm:gap-6 lg:mt-[70px] lg:grid-cols-[340px_1fr] lg:gap-[30px] xl:grid-cols-[340px_1fr]">
+      <section class="rounded bg-white p-5 shadow-[0_1px_20px_rgba(0,0,0,0.07)] sm:p-8 lg:p-10" aria-label="Contact information">
         <div>
           <h2 class="mb-[26px] mt-0 flex items-center gap-4 text-[18px] font-medium max-[680px]:mb-[18px]"><span class="grid h-10 w-10 shrink-0 place-items-center rounded-full bg-exclusive"><img class="h-[22px] w-[22px] object-contain brightness-0 invert" src="../assets/images/contact/phone.png" alt=""></span>Call To Us</h2>
           <p class="mb-[17px] mt-0 text-[15px] leading-[1.5]">We are available 24/7, 7 days a week.</p>
@@ -32,15 +33,16 @@
           <p class="mb-0 mt-0 text-[15px] leading-[1.5]">Emails: support@exclusive.com</p>
         </div>
       </section>
-      <form id="contact-form" class="flex flex-col rounded bg-white p-10 shadow-[0_1px_20px_rgba(0,0,0,0.07)] max-[1000px]:px-[25px] max-[1000px]:py-8 max-[680px]:px-[18px] max-[680px]:py-6" novalidate>
-        <div class="grid grid-cols-3 gap-4 max-[1000px]:gap-[10px] max-[680px]:grid-cols-1 max-[680px]:gap-3">
-          <label class="flex h-[50px] min-w-0 items-center rounded bg-pale px-4 max-[1000px]:px-3"><span class="sr-only">Your Name</span><input id="contact-name" class="h-full w-full min-w-0 bg-transparent p-0 text-[16px] outline-none placeholder:text-[#7D8184] max-[1000px]:text-[14px]" type="text" placeholder="Your Name" required><span class="ml-[5px] text-exclusive">*</span></label>
-          <label class="flex h-[50px] min-w-0 items-center rounded bg-pale px-4 max-[1000px]:px-3"><span class="sr-only">Your Email</span><input id="contact-email" class="h-full w-full min-w-0 bg-transparent p-0 text-[16px] outline-none placeholder:text-[#7D8184] max-[1000px]:text-[14px]" type="email" placeholder="Your Email" required><span class="ml-[5px] text-exclusive">*</span></label>
-          <label class="flex h-[50px] min-w-0 items-center rounded bg-pale px-4 max-[1000px]:px-3"><span class="sr-only">Your Phone</span><input id="contact-phone" class="h-full w-full min-w-0 bg-transparent p-0 text-[16px] outline-none placeholder:text-[#7D8184] max-[1000px]:text-[14px]" type="tel" placeholder="Your Phone" required><span class="ml-[5px] text-exclusive">*</span></label>
+      <form id="contact-form" class="flex w-full min-w-0 flex-col rounded bg-white p-4 shadow-[0_1px_20px_rgba(0,0,0,0.07)] sm:p-6 lg:p-10" novalidate>
+        <div class="grid min-w-0 grid-cols-1 gap-3 lg:grid-cols-3 lg:gap-4">
+          <label class="flex h-[50px] min-w-0 items-center rounded bg-pale px-4 max-[1000px]:px-3"><span class="sr-only">Your Name</span><input id="contact-name" class="h-full w-full min-w-0 bg-transparent p-0 text-[16px] outline-none placeholder:text-[#7D8184] max-[1000px]:text-[14px] max-[680px]:text-[16px]" type="text" placeholder="Your Name" required><span class="ml-[5px] text-exclusive">*</span></label>
+          <!-- Keep mobile form inputs at 16px to prevent browser zoom on touch devices. -->
+          <label class="flex h-[50px] min-w-0 items-center rounded bg-pale px-4 max-[1000px]:px-3"><span class="sr-only">Your Email</span><input id="contact-email" class="h-full w-full min-w-0 bg-transparent p-0 text-[16px] outline-none placeholder:text-[#7D8184] max-[1000px]:text-[14px] max-[680px]:text-[16px]" type="email" placeholder="Your Email" required><span class="ml-[5px] text-exclusive">*</span></label>
+          <label class="flex h-[50px] min-w-0 items-center rounded bg-pale px-4 max-[1000px]:px-3"><span class="sr-only">Your Phone</span><input id="contact-phone" class="h-full w-full min-w-0 bg-transparent p-0 text-[16px] outline-none placeholder:text-[#7D8184] max-[1000px]:text-[14px] max-[680px]:text-[16px]" type="tel" placeholder="Your Phone" required><span class="ml-[5px] text-exclusive">*</span></label>
         </div>
         <label class="mt-[30px] block max-[680px]:mt-4"><span class="sr-only">Your Massage</span><textarea id="contact-message" class="h-[200px] w-full resize-y rounded border-0 bg-pale px-[18px] py-[15px] text-[16px] outline-exclusive placeholder:text-[#7D8184] max-[680px]:h-[170px]" placeholder="Your Massage" required></textarea></label>
         <p id="contact-feedback" class="mt-4 hidden text-[14px] text-exclusive" role="alert" aria-live="polite"></p>
-        <button class="mt-9 self-end rounded bg-exclusive px-12 py-4 text-white max-[680px]:mt-5 max-[680px]:w-full" type="submit">Send Massage</button>
+        <button class="mt-9 self-end rounded bg-exclusive px-12 py-4 text-white max-[680px]:mt-5 w-full sm:w-auto" type="submit">Send Massage</button>
       </form>
     </div>
   </main>

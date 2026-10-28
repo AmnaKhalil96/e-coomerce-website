@@ -11,32 +11,33 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 </head>
 <body class="m-0 min-h-screen w-full overflow-x-clip bg-white font-poppins text-[14px] font-normal text-ink antialiased">
-  <!-- Home-page adjustment: clip horizontal overflow around all document content while leaving the fixed button outside. -->
+  <!-- Desktop refinement: clip horizontal overflow around all document content while leaving the fixed button outside. -->
   <div class="w-full overflow-x-clip">
-  <div id="site-topbar" class="[&>div]:h-[50px]"></div>
+  <div id="site-topbar"></div>
   <div id="site-header"></div>
 
   <!-- Main page content follows the order of the supplied home reference. -->
   <main>
+    <!-- Responsive hero keeps the desktop composition above 1279px and scales the slide below it. -->
     <!-- Hero category list and iPhone promotion slider. -->
-    <!-- Home-page adjustment: align the 344px hero with the header and extend its slider past the content edge. -->
-    <section class="relative mx-auto grid h-[400px] w-[1170px] grid-cols-[270px_1fr] pt-0" aria-label="Featured promotion">
-      <aside class="flex flex-col gap-[13px] border-r border-line pr-[22px] pt-[3px] text-[13px]">
+    <!-- Desktop refinement: align the 344px hero with the header and extend its slider past the content edge. -->
+    <section class="relative mx-auto grid h-auto w-full max-w-[1170px] grid-cols-1 px-4 pt-0 sm:px-6 xl:h-[400px] xl:w-[1170px] xl:grid-cols-[270px_1fr] xl:px-0" aria-label="Featured promotion">
+      <aside class="hidden flex-col gap-[13px] border-r border-line pr-[22px] pt-[3px] text-[13px] xl:flex">
         <a class="flex justify-between" href="#">Woman's Fashion <span class="text-[20px] leading-[15px]">›</span></a>
         <a class="flex justify-between" href="#">Men's Fashion <span class="text-[20px] leading-[15px]">›</span></a>
         <a href="#">Electronics</a><a href="#">Home &amp; Lifestyle</a><a href="#">Medicine</a>
         <a href="#">Sports &amp; Outdoor</a><a href="#">Baby's &amp; Toys</a><a href="#">Groceries &amp; Pets</a><a href="#">Health &amp; Beauty</a>
       </aside>
-      <!-- Home-page adjustment: the 892px hero starts 352px into the 1170px content grid. -->
-      <div class="relative ml-[82px] flex h-[344px] w-[892px] shrink-0 items-center overflow-hidden bg-[#050505] px-[65px] py-[55px] text-white">
-        <img class="absolute left-[66px] top-[35px] h-[34px] w-[34px] object-contain" src="assets/images/home/apple-logo.png" alt="Apple">
-        <div class="z-10">
+      <!-- Desktop refinement: the 892px hero starts 352px into the 1170px content grid. -->
+      <div class="relative ml-0 flex min-h-[220px] w-full min-w-0 items-center overflow-hidden bg-[#050505] px-4 py-6 text-white sm:min-h-[280px] sm:px-8 lg:h-[344px] lg:min-h-0 lg:px-10 xl:ml-[82px] xl:h-[344px] xl:w-[892px] xl:shrink-0 xl:px-[65px] xl:py-[55px]">
+        <img class="absolute left-4 top-4 h-6 w-6 object-contain sm:left-8 sm:top-6 sm:h-7 sm:w-7 xl:left-[66px] xl:top-[35px] xl:h-[34px] xl:w-[34px]" src="assets/images/home/apple-logo.png" alt="Apple">
+        <div class="z-10 w-[55%] min-w-0 sm:w-[55%] xl:w-auto">
           <small class="text-[14px]">iPhone 14 Series</small>
-          <h1 class="my-[18px] text-[48px] font-medium leading-[1.2]">Up to 10%<br>off Voucher</h1>
+          <h1 class="my-[18px] text-2xl font-medium leading-tight sm:text-4xl xl:text-5xl">Up to 10%<br>off Voucher</h1>
           <a class="text-[14px] text-white underline underline-offset-4" href="#">Shop Now <span aria-hidden="true">&rarr;</span></a>
         </div>
-        <img class="absolute right-0 top-0 h-[344px] w-[520px] object-contain" src="assets/images/home/iphone-14-series.jpg" alt="iPhone 14">
-        <!-- Home-page adjustment: keep the dots centered inside the slider with slide three selected. -->
+        <img class="absolute right-2 top-1/2 h-full max-h-full w-[43%] -translate-y-1/2 object-contain sm:right-4 sm:w-[45%] xl:right-0 xl:top-0 xl:h-[344px] xl:w-[520px] xl:translate-y-0" src="assets/images/home/iphone-14-series.jpg" alt="iPhone 14">
+        <!-- Desktop refinement: keep the dots centered inside the slider with slide three selected. -->
         <div class="absolute bottom-[14px] left-1/2 flex -translate-x-1/2 gap-[10px]" aria-label="Choose slide">
         <button class="hero-dot h-[12px] w-[12px] rounded-full border-2 border-white bg-[#888888]" aria-label="Slide 1"></button>
         <button class="hero-dot h-[12px] w-[12px] rounded-full border-2 border-white bg-[#888888]" aria-label="Slide 2"></button>
@@ -47,35 +48,37 @@
       </div>
     </section>
 
+    <!-- Responsive product rows scroll internally and use measured card widths. -->
     <!-- Flash sale products and live countdown. -->
-    <section class="relative mx-auto w-[1170px] border-b border-line pb-[60px] pt-[128px]">
-      <!-- Home-page adjustment: align each red label bar and label text with the reference spacing. -->
-      <p class="mb-[30px] flex items-center gap-4 text-[16px] font-semibold leading-none text-exclusive"><span class="h-10 w-5 shrink-0 rounded-[4px] bg-exclusive"></span><span>Today's</span></p>
-      <div class="mb-[30px] flex items-center gap-[30px]">
-        <h2 class="m-0 text-[36px] font-semibold leading-[1.25]">Flash Sales</h2>
-        <div class="flex items-center gap-4 text-[27px] font-semibold" data-countdown="flash">
+    <section class="relative mx-auto w-full max-w-[1170px] border-b border-line px-4 pb-8 pt-10 sm:px-6 sm:pb-10 sm:pt-14 lg:pt-20 xl:w-[1170px] xl:px-0 xl:pb-[60px] xl:pt-[128px]">
+      <!-- Desktop refinement: align each red label bar and label text with the reference spacing. -->
+      <p class="mb-5 flex items-center gap-4 text-[16px] font-semibold leading-none text-exclusive sm:mb-[30px]"><span class="h-10 w-5 shrink-0 rounded-[4px] bg-exclusive"></span><span>Today's</span></p>
+      <div class="mb-[30px] flex items-center gap-[30px] max-[767px]:flex-wrap max-[767px]:gap-4">
+        <h2 class="m-0 text-2xl font-semibold leading-tight sm:text-3xl xl:text-[36px] xl:leading-[1.25]">Flash Sales</h2>
+        <div class="flex items-center gap-4 text-[27px] font-semibold max-[767px]:order-3 max-[767px]:w-full max-[767px]:justify-start max-[480px]:gap-3 max-[480px]:text-[23px]" data-countdown="flash">
           <span class="flex flex-col"><small class="text-[11px] font-normal">Days</small><b data-time="days">03</b></span>:
           <span class="flex flex-col"><small class="text-[11px] font-normal">Hours</small><b data-time="hours">23</b></span>:
           <span class="flex flex-col"><small class="text-[11px] font-normal">Minutes</small><b data-time="minutes">19</b></span>:
           <span class="flex flex-col"><small class="text-[11px] font-normal">Seconds</small><b data-time="seconds">56</b></span>
         </div>
-        <div class="ml-auto flex gap-3">
+        <div class="ml-auto flex gap-3 max-[767px]:order-2">
           <button class="flex h-[46px] w-[46px] items-center justify-center rounded-full bg-pale" data-scroll="flash-track" data-dir="-1" aria-label="Scroll products left"><img class="h-5 w-5" src="assets/images/shared/arrow-left.png" alt=""></button>
           <button class="flex h-[46px] w-[46px] items-center justify-center rounded-full bg-pale" data-scroll="flash-track" data-dir="1" aria-label="Scroll products right"><img class="h-5 w-5" src="assets/images/shared/arrow-right.png" alt=""></button>
         </div>
       </div>
-      <!-- Home-page adjustment: make the flash carousel reach the 1440px viewport edge. -->
-      <div class="flex w-[calc(100%_+_135px)] gap-[30px] overflow-x-auto [scrollbar-width:none] [&::-webkit-scrollbar]:hidden [&>article>h3]:text-[16px] [&>article>div:nth-of-type(2)]:text-[16px]" id="flash-track"></div>
+      <!-- Desktop refinement: make the flash carousel reach the 1440px viewport edge. -->
+      <div class="flex w-full min-w-0 gap-4 overflow-x-auto [scrollbar-width:none] [&::-webkit-scrollbar]:hidden xl:w-[calc(100%_+_135px)] xl:gap-[30px]" id="flash-track"></div>
       <button class="mx-auto mt-[35px] block rounded-[3px] bg-exclusive px-[34px] py-[15px] text-[14px] text-white">View All Products</button>
     </section>
 
+    <!-- Category tiles reflow to two, three, then six columns as space allows. -->
     <!-- Best selling header and six selectable categories. -->
-    <section class="mx-auto w-[1170px] pb-[50px] pt-[55px]">
-      <!-- Home-page adjustment: use the same flex label row and heading gap as the other sections. -->
-      <p class="mb-[30px] flex items-center gap-4 text-[16px] font-semibold leading-none text-exclusive"><span class="h-10 w-5 shrink-0 rounded-[4px] bg-exclusive"></span><span>This Month</span></p>
-      <div class="mb-10 flex items-center justify-between"><h2 class="m-0 text-[36px] font-semibold leading-[1.25]">Best Selling Products</h2><button class="rounded-[3px] bg-exclusive px-[37px] py-[14px] text-white">View All</button></div>
-      <!-- Home-page adjustment: normalize icon brightness for inactive and selected category boxes. -->
-      <div class="grid grid-cols-6 gap-6" id="category-tiles">
+    <section class="mx-auto w-full max-w-[1170px] px-4 pb-8 pt-10 sm:px-6 sm:pb-10 sm:pt-12 lg:pb-12 lg:pt-16 xl:w-[1170px] xl:px-0 xl:pb-[50px] xl:pt-[55px]">
+      <!-- Desktop refinement: use the same flex label row and heading gap as the other sections. -->
+      <p class="mb-5 flex items-center gap-4 text-[16px] font-semibold leading-none text-exclusive sm:mb-[30px]"><span class="h-10 w-5 shrink-0 rounded-[4px] bg-exclusive"></span><span>This Month</span></p>
+      <div class="mb-6 flex flex-wrap items-center justify-between gap-4 sm:mb-10"><h2 class="m-0 text-2xl font-semibold leading-tight sm:text-3xl xl:text-[36px] xl:leading-[1.25]">Best Selling Products</h2><button class="rounded-[3px] bg-exclusive px-[37px] py-[14px] text-white">View All</button></div>
+      <!-- Desktop refinement: normalize icon brightness for inactive and selected category boxes. -->
+      <div class="grid grid-cols-2 gap-3 sm:gap-4 md:grid-cols-3 lg:grid-cols-6 lg:gap-6" id="category-tiles">
         <button class="category-tile flex h-[150px] flex-col items-center justify-center gap-3 border border-[#DDDDDD] bg-white text-[14px]"><img class="h-12 w-12 brightness-0" src="assets/images/home/category-phone.png" alt="">Phones</button>
         <button class="category-tile flex h-[150px] flex-col items-center justify-center gap-3 border border-[#DDDDDD] bg-white text-[14px]"><img class="h-12 w-12 brightness-0" src="assets/images/home/category-computer.png" alt="">Computers</button>
         <button class="category-tile flex h-[150px] flex-col items-center justify-center gap-3 border border-[#DDDDDD] bg-white text-[14px]"><img class="h-12 w-12 brightness-0" src="assets/images/home/category-smartwatch.png" alt="">SmartWatch</button>
@@ -86,69 +89,73 @@
     </section>
 
     <!-- Browse by category product carousel. -->
-    <!-- Home-page adjustment: offset Browse By Category 20px and preserve the 220px banner gap. -->
-    <section class="relative left-[20px] mx-auto w-[1170px] pb-[220px] pt-[45px]">
-      <!-- Home-page adjustment: keep the Browse label aligned with the shared 20x40 label treatment. -->
-      <p class="mb-[30px] flex items-center gap-4 text-[16px] font-semibold leading-none text-exclusive"><span class="h-10 w-5 shrink-0 rounded-[4px] bg-exclusive"></span><span>Categories</span></p>
-      <div class="mb-[35px] flex items-center"><h2 class="m-0 text-[36px] font-semibold leading-[1.25]">Browse By Category</h2><div class="ml-auto flex gap-3">
+    <!-- Desktop refinement: offset Browse By Category 20px and preserve the 220px banner gap. -->
+    <section class="relative left-0 mx-auto mt-8 w-full max-w-[1170px] px-4 pb-10 pt-8 sm:mt-10 sm:px-6 sm:pb-14 sm:pt-10 lg:mt-12 lg:pb-20 xl:left-[20px] xl:mt-0 xl:w-[1170px] xl:px-0 xl:pb-[220px] xl:pt-[45px]">
+      <!-- Desktop refinement: keep the Browse label aligned with the shared 20x40 label treatment. -->
+      <p class="mb-5 flex items-center gap-4 text-[16px] font-semibold leading-none text-exclusive sm:mb-[30px]"><span class="h-10 w-5 shrink-0 rounded-[4px] bg-exclusive"></span><span>Categories</span></p>
+      <div class="mb-6 flex flex-wrap items-center gap-3 sm:mb-[35px]"><h2 class="m-0 text-2xl font-semibold leading-tight sm:text-3xl xl:text-[36px] xl:leading-[1.25]">Browse By Category</h2><div class="ml-auto flex gap-3">
         <button class="flex h-[46px] w-[46px] items-center justify-center rounded-full bg-pale" data-scroll="browse-track" data-dir="-1" aria-label="Scroll products left"><img class="h-5 w-5" src="assets/images/shared/arrow-left.png" alt=""></button>
         <button class="flex h-[46px] w-[46px] items-center justify-center rounded-full bg-pale" data-scroll="browse-track" data-dir="1" aria-label="Scroll products right"><img class="h-5 w-5" src="assets/images/shared/arrow-right.png" alt=""></button>
       </div></div>
-      <div class="flex gap-[30px] overflow-x-auto [scrollbar-width:none] [&::-webkit-scrollbar]:hidden [&>article>h3]:text-[16px] [&>article>div:nth-of-type(2)]:text-[16px]" id="browse-track"></div>
+      <div class="flex w-full min-w-0 gap-4 overflow-x-auto [scrollbar-width:none] [&::-webkit-scrollbar]:hidden xl:gap-[30px]" id="browse-track"></div>
     </section>
 
+    <!-- Music promotion stacks its content and image on compact screens. -->
     <!-- Music banner with live circular countdown. -->
-    <section class="relative mx-auto mb-[70px] flex h-[500px] w-[1170px] items-center overflow-hidden bg-[#050505] px-[60px] py-[55px] text-white">
-      <div class="z-10"><strong class="text-[16px] text-music">Categories</strong><h2 class="my-[25px] text-[40px] font-semibold leading-[1.2]">Enhance Your<br>Music Experience</h2>
-        <div class="flex gap-4" data-countdown="music">
-          <span class="flex h-[62px] w-[62px] flex-col items-center justify-center rounded-full bg-white text-[18px] font-semibold text-black"><b data-time="days">23</b><small class="text-[10px] font-normal">Days</small></span>
-          <span class="flex h-[62px] w-[62px] flex-col items-center justify-center rounded-full bg-white text-[18px] font-semibold text-black"><b data-time="hours">05</b><small class="text-[10px] font-normal">Hours</small></span>
-          <span class="flex h-[62px] w-[62px] flex-col items-center justify-center rounded-full bg-white text-[18px] font-semibold text-black"><b data-time="minutes">59</b><small class="text-[10px] font-normal">Minutes</small></span>
-          <span class="flex h-[62px] w-[62px] flex-col items-center justify-center rounded-full bg-white text-[18px] font-semibold text-black"><b data-time="seconds">35</b><small class="text-[10px] font-normal">Seconds</small></span>
+    <section class="relative mx-auto mb-12 flex h-auto w-full max-w-[1170px] flex-col items-start gap-6 overflow-hidden bg-[#050505] px-5 py-8 text-white sm:mb-16 sm:gap-8 sm:px-8 sm:py-10 lg:mb-20 lg:flex-row lg:items-center lg:gap-0 lg:px-10 xl:mb-[70px] xl:h-[500px] xl:w-[1170px] xl:px-[60px] xl:py-[55px]">
+      <div class="z-10 w-full min-w-0 lg:w-[48%] xl:w-auto"><strong class="text-[16px] text-music">Categories</strong><h2 class="my-5 text-3xl font-semibold leading-tight sm:my-[25px] sm:text-4xl xl:text-[40px] xl:leading-[1.2]">Enhance Your<br>Music Experience</h2>
+        <div class="flex w-full max-w-[300px] justify-between gap-2 sm:gap-4 lg:w-auto" data-countdown="music">
+          <span class="flex h-[52px] w-[52px] shrink-0 flex-col items-center justify-center rounded-full bg-white text-[16px] font-semibold text-black sm:h-[62px] sm:w-[62px] sm:text-[18px]"><b data-time="days">23</b><small class="text-[10px] font-normal">Days</small></span>
+          <span class="flex h-[52px] w-[52px] shrink-0 flex-col items-center justify-center rounded-full bg-white text-[16px] font-semibold text-black sm:h-[62px] sm:w-[62px] sm:text-[18px]"><b data-time="hours">05</b><small class="text-[10px] font-normal">Hours</small></span>
+          <span class="flex h-[52px] w-[52px] shrink-0 flex-col items-center justify-center rounded-full bg-white text-[16px] font-semibold text-black sm:h-[62px] sm:w-[62px] sm:text-[18px]"><b data-time="minutes">59</b><small class="text-[10px] font-normal">Minutes</small></span>
+          <span class="flex h-[52px] w-[52px] shrink-0 flex-col items-center justify-center rounded-full bg-white text-[16px] font-semibold text-black sm:h-[62px] sm:w-[62px] sm:text-[18px]"><b data-time="seconds">35</b><small class="text-[10px] font-normal">Seconds</small></span>
         </div>
         <button class="mt-7 rounded-[3px] bg-music px-[30px] py-[13px] font-medium text-black">Buy Now!</button>
       </div>
-      <!-- Home-page adjustment: enlarge the supplied speaker art until the speaker itself fills about 560px. -->
-      <img class="absolute -right-[100px] -top-[155px] h-[770px] w-[770px] object-contain" src="assets/images/home/jbl-speaker-banner.png" alt="Black portable speaker">
+      <!-- Desktop refinement: enlarge the supplied speaker art until the speaker itself fills about 560px. -->
+      <img class="static mx-auto h-auto w-full max-w-[560px] object-contain lg:absolute lg:right-4 lg:top-1/2 lg:h-[min(500px,60vw)] lg:w-[55%] lg:max-w-[560px] lg:-translate-y-1/2 xl:-right-[100px] xl:top-[-155px] xl:h-[770px] xl:w-[770px] xl:max-w-none xl:translate-y-0" src="assets/images/home/jbl-speaker-banner.png" alt="Black portable speaker">
     </section>
 
+    <!-- Explore products reflow from one to four columns on narrow screens. -->
     <!-- Explore products in a two-row product grid. -->
-    <section class="mx-auto w-[1170px] pb-[100px]">
-      <!-- Home-page adjustment: keep the Explore label aligned with the shared 20x40 label treatment. -->
-      <p class="mb-[30px] flex items-center gap-4 text-[16px] font-semibold leading-none text-exclusive"><span class="h-10 w-5 shrink-0 rounded-[4px] bg-exclusive"></span><span>Our Products</span></p>
-      <div class="mb-[35px] flex items-center"><h2 class="m-0 text-[36px] font-semibold leading-[1.25]">Explore Our Products</h2><div class="ml-auto flex gap-3">
+    <section class="mx-auto w-full max-w-[1170px] px-4 pb-10 sm:px-6 sm:pb-14 lg:pb-20 xl:w-[1170px] xl:px-0 xl:pb-[100px]">
+      <!-- Desktop refinement: keep the Explore label aligned with the shared 20x40 label treatment. -->
+      <p class="mb-5 flex items-center gap-4 text-[16px] font-semibold leading-none text-exclusive sm:mb-[30px]"><span class="h-10 w-5 shrink-0 rounded-[4px] bg-exclusive"></span><span>Our Products</span></p>
+      <div class="mb-6 flex flex-wrap items-center gap-3 sm:mb-[35px]"><h2 class="m-0 text-2xl font-semibold leading-tight sm:text-3xl xl:text-[36px] xl:leading-[1.25]">Explore Our Products</h2><div class="ml-auto flex gap-3">
         <button class="flex h-[46px] w-[46px] items-center justify-center rounded-full bg-pale" data-scroll="explore-track" data-dir="-1" aria-label="Scroll products left"><img class="h-5 w-5" src="assets/images/shared/arrow-left.png" alt=""></button>
         <button class="flex h-[46px] w-[46px] items-center justify-center rounded-full bg-pale" data-scroll="explore-track" data-dir="1" aria-label="Scroll products right"><img class="h-5 w-5" src="assets/images/shared/arrow-right.png" alt=""></button>
       </div></div>
-      <!-- Home-page adjustment: utility selectors align Explore product prices and ratings, with swatches below. -->
-      <div class="grid grid-cols-4 gap-x-[30px] gap-y-[55px] [&>article]:grid [&>article]:grid-cols-[max-content_1fr] [&>article]:gap-x-2 [&>article>div:first-child]:col-span-2 [&>article>h3]:col-span-2 [&>article>div:nth-of-type(2)]:row-start-3 [&>article>div:nth-of-type(3)]:row-start-3 [&>article>div:nth-of-type(3)]:col-start-2 [&>article>div:nth-of-type(3)]:mt-0 [&>article>div:nth-of-type(4)]:col-span-2 [&>article>div:nth-of-type(4)]:row-start-4 [&>article>h3]:text-[16px] [&>article>div:nth-of-type(2)]:text-[16px]" id="explore-track"></div>
+      <!-- Desktop refinement: utility selectors align Explore product prices and ratings, with swatches below. -->
+      <div class="grid grid-cols-2 gap-x-4 gap-y-8 md:grid-cols-3 lg:grid-cols-4 xl:gap-x-[30px] xl:gap-y-[55px]" id="explore-track"></div>
       <button class="mx-auto mt-[35px] block rounded-[3px] bg-exclusive px-[34px] py-[15px] text-[14px] text-white">View All Products</button>
     </section>
 
-    <!-- New arrival feature tiles. -->
-    <!-- Home-page adjustment: match the reference's two-column feature layout and tile dimensions. -->
-    <section class="mx-auto w-[1170px] pb-[100px] pt-5">
-      <!-- Home-page adjustment: keep the Featured label aligned with the shared 20x40 label treatment. -->
-      <p class="mb-[30px] flex items-center gap-4 text-[16px] font-semibold leading-none text-exclusive"><span class="h-10 w-5 shrink-0 rounded-[4px] bg-exclusive"></span><span>Featured</span></p>
-      <h2 class="mb-10 text-[36px] font-semibold leading-[1.25]">New Arrival</h2>
-      <div class="grid h-[600px] grid-cols-[570px_570px] grid-rows-[284px_284px] gap-[30px]">
-        <article class="relative row-span-2 h-[600px] overflow-hidden bg-[#050505] text-white"><img class="absolute inset-0 h-full w-full object-cover object-center" src="assets/images/home/playstation-5-tile.png" alt="PlayStation 5"><div class="absolute bottom-[24px] left-[24px] z-10"><h3 class="mb-[7px] text-[24px] font-medium">PlayStation 5</h3><p class="mb-3 text-[12px]">Black and White version of the PS5<br>coming out on sale.</p><a class="text-[13px] underline underline-offset-4" href="#">Shop Now</a></div></article>
-        <div class="grid grid-rows-[284px_284px] gap-[30px]">
-          <article class="relative overflow-hidden bg-[#050505] text-white"><img class="absolute right-0 top-0 h-full w-[66%] object-cover object-left" src="assets/images/home/womens-collection-tile.jpg" alt="Women's Collections"><div class="absolute bottom-[24px] left-[24px] z-10"><h3 class="mb-[7px] text-[24px] font-medium">Women's Collections</h3><p class="mb-3 text-[12px]">Featured woman collections that<br>give you another vibe.</p><a class="text-[13px] underline underline-offset-4" href="#">Shop Now</a></div></article>
-          <div class="grid grid-cols-2 gap-[30px]">
-            <article class="relative overflow-hidden bg-[#050505] text-white"><img class="absolute right-0 top-0 h-[78%] w-[75%] object-contain" src="assets/images/home/amazon-wireless-speakers-tile.png" alt="Speakers"><div class="absolute bottom-[24px] left-[24px] z-10"><h3 class="mb-[7px] text-[16px] font-medium">Speakers</h3><p class="mb-3 text-[11px]">Amazon wireless speakers</p><a class="text-[12px] underline underline-offset-4" href="#">Shop Now</a></div></article>
-            <article class="relative overflow-hidden bg-[#050505] text-white"><img class="absolute right-0 top-0 h-[78%] w-[75%] object-contain" src="assets/images/home/gucci-perfume-tile.png" alt="Perfume"><div class="absolute bottom-[24px] left-[24px] z-10"><h3 class="mb-[7px] text-[16px] font-medium">Perfume</h3><p class="mb-3 text-[11px]">GUCCI INTENSE OUD EDP</p><a class="text-[12px] underline underline-offset-4" href="#">Shop Now</a></div></article>
+    <!-- Arrival tiles stack on phones and use a two-column tablet layout. -->
+    <!-- Responsive feature tiles stack on phones and use the two-column design from md upward. -->
+    <!-- Desktop refinement: match the reference's two-column feature layout and tile dimensions. -->
+    <section class="mx-auto w-full max-w-[1170px] px-4 pb-10 pt-6 sm:px-6 sm:pb-14 sm:pt-8 lg:pb-20 xl:w-[1170px] xl:px-0 xl:pb-[100px] xl:pt-5">
+      <!-- Desktop refinement: keep the Featured label aligned with the shared 20x40 label treatment. -->
+      <p class="mb-5 flex items-center gap-4 text-[16px] font-semibold leading-none text-exclusive sm:mb-[30px]"><span class="h-10 w-5 shrink-0 rounded-[4px] bg-exclusive"></span><span>Featured</span></p>
+      <h2 class="mb-6 text-2xl font-semibold leading-tight sm:mb-10 sm:text-3xl xl:text-[36px] xl:leading-[1.25]">New Arrival</h2>
+      <div class="grid grid-cols-1 gap-4 md:grid-cols-2 md:auto-rows-[300px] xl:h-[600px] xl:grid-cols-[570px_570px] xl:grid-rows-[284px_284px] xl:gap-[30px]">
+        <article class="relative h-[280px] overflow-hidden bg-[#050505] text-white sm:h-[320px] md:row-span-2 md:h-[620px] xl:row-span-2 xl:h-[600px]"><img class="absolute inset-0 h-full w-full object-cover object-center" src="assets/images/home/playstation-5-tile.png" alt="PlayStation 5"><div class="absolute bottom-4 left-4 z-10 sm:bottom-6 sm:left-6 xl:bottom-[24px] xl:left-[24px]"><h3 class="mb-[7px] text-[24px] font-medium">PlayStation 5</h3><p class="mb-3 text-[12px]">Black and White version of the PS5<br>coming out on sale.</p><a class="text-[13px] underline underline-offset-4" href="#">Shop Now</a></div></article>
+        <div class="grid grid-rows-none gap-4 md:grid-rows-[300px_300px] xl:grid-rows-[284px_284px] xl:gap-[30px]">
+          <article class="relative h-[280px] overflow-hidden bg-[#050505] text-white sm:h-[320px] md:h-[300px] xl:h-auto"><img class="absolute right-0 top-0 h-full w-[66%] object-cover object-left" src="assets/images/home/womens-collection-tile.jpg" alt="Women's Collections"><div class="absolute bottom-[24px] left-[24px] z-10"><h3 class="mb-[7px] text-[24px] font-medium">Women's Collections</h3><p class="mb-3 text-[12px]">Featured woman collections that<br>give you another vibe.</p><a class="text-[13px] underline underline-offset-4" href="#">Shop Now</a></div></article>
+          <div class="grid grid-cols-1 gap-3 min-[480px]:grid-cols-2 md:gap-4 xl:grid-cols-2 xl:gap-[30px]">
+            <article class="relative h-[280px] overflow-hidden bg-[#050505] text-white sm:h-[320px] md:h-[300px] xl:h-auto"><img class="absolute right-0 top-0 h-[78%] w-[75%] object-contain" src="assets/images/home/amazon-wireless-speakers-tile.png" alt="Speakers"><div class="absolute bottom-[24px] left-[24px] z-10"><h3 class="mb-[7px] text-[16px] font-medium">Speakers</h3><p class="mb-3 text-[11px]">Amazon wireless speakers</p><a class="text-[12px] underline underline-offset-4" href="#">Shop Now</a></div></article>
+            <article class="relative h-[280px] overflow-hidden bg-[#050505] text-white sm:h-[320px] md:h-[300px] xl:h-auto"><img class="absolute right-0 top-0 h-[78%] w-[75%] object-contain" src="assets/images/home/gucci-perfume-tile.png" alt="Perfume"><div class="absolute bottom-[24px] left-[24px] z-10"><h3 class="mb-[7px] text-[16px] font-medium">Perfume</h3><p class="mb-3 text-[11px]">GUCCI INTENSE OUD EDP</p><a class="text-[12px] underline underline-offset-4" href="#">Shop Now</a></div></article>
           </div>
         </div>
       </div>
     </section>
 
+    <!-- Service promises stack on phones and align in a row on wider screens. -->
     <!-- Three customer service promises. -->
-    <!-- Home-page adjustment: place the three service centers 343px apart. -->
-    <section class="mx-auto flex w-[1170px] justify-center gap-[93px] pb-[100px] pt-5 text-center">
-      <article class="w-[250px]"><img class="mx-auto h-20 w-20" src="assets/images/shared/service-delivery.png" alt=""><h3 class="mb-[5px] mt-[18px] text-[16px] font-semibold">FREE AND FAST DELIVERY</h3><p class="m-0 text-[12px]">Free delivery for all orders over $140</p></article>
-      <article class="w-[250px]"><img class="mx-auto h-20 w-20" src="assets/images/shared/service-customer-support.png" alt=""><h3 class="mb-[5px] mt-[18px] text-[16px] font-semibold">24/7 CUSTOMER SERVICE</h3><p class="m-0 text-[12px]">Friendly 24/7 customer support</p></article>
-      <article class="w-[250px]"><img class="mx-auto h-20 w-20" src="assets/images/shared/service-money-back.png" alt=""><h3 class="mb-[5px] mt-[18px] text-[16px] font-semibold">MONEY BACK GUARANTEE</h3><p class="m-0 text-[12px]">We return money within 30 days</p></article>
+    <!-- Desktop refinement: place the three service centers 343px apart. -->
+    <section class="mx-auto flex w-full max-w-[1170px] flex-col items-center justify-center gap-10 px-4 pb-12 pt-8 text-center sm:px-6 sm:pb-16 md:flex-row md:gap-5 xl:w-[1170px] xl:gap-[93px] xl:px-0 xl:pb-[100px] xl:pt-5">
+      <article class="w-full md:w-[calc((100%-40px)/3)] xl:w-[250px]"><img class="mx-auto h-20 w-20" src="assets/images/shared/service-delivery.png" alt=""><h3 class="mb-[5px] mt-[18px] text-[16px] font-semibold">FREE AND FAST DELIVERY</h3><p class="m-0 text-[12px]">Free delivery for all orders over $140</p></article>
+      <article class="w-full md:w-[calc((100%-40px)/3)] xl:w-[250px]"><img class="mx-auto h-20 w-20" src="assets/images/shared/service-customer-support.png" alt=""><h3 class="mb-[5px] mt-[18px] text-[16px] font-semibold">24/7 CUSTOMER SERVICE</h3><p class="m-0 text-[12px]">Friendly 24/7 customer support</p></article>
+      <article class="w-full md:w-[calc((100%-40px)/3)] xl:w-[250px]"><img class="mx-auto h-20 w-20" src="assets/images/shared/service-money-back.png" alt=""><h3 class="mb-[5px] mt-[18px] text-[16px] font-semibold">MONEY BACK GUARANTEE</h3><p class="m-0 text-[12px]">We return money within 30 days</p></article>
     </section>
   </main>
 

@@ -15,14 +15,15 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   </head>
-  <body data-page="account" class="m-0 min-h-screen bg-white font-poppins text-[16px] text-black antialiased">
+  <body data-page="account" class="m-0 min-h-screen bg-white font-poppins text-[16px] text-black antialiased overflow-x-clip">
     
     <div id="site-topbar">
     </div>
     <div id="site-header">
     </div>
     <!-- Account breadcrumb and profile greeting. -->
-    <main class="mx-auto w-[1170px] pb-[150px] max-[1200px]:w-[calc(100%-48px)] max-[680px]:w-[calc(100%-32px)] max-[680px]:pb-20">
+        <!-- Responsive account form moves below the menu sidebar on compact screens. -->
+<main class="mx-auto w-full max-w-[1170px] px-4 pb-16 sm:px-6 sm:pb-20 xl:w-[1170px] xl:px-0 xl:pb-[150px]">
       <div class="mt-[82px] flex items-center justify-between text-[14px] max-[680px]:mt-[34px]">
         <nav class="flex items-center gap-[14px] text-[#888888]" aria-label="Breadcrumb">
           <a href="../index.html">
@@ -43,7 +44,7 @@
         </p>
       </div>
       <!-- Sidebar and profile form follow the account reference's two-column layout. -->
-      <div class="mt-[98px] grid grid-cols-[240px_minmax(0,1fr)] gap-[88px] max-[1000px]:grid-cols-[200px_minmax(0,1fr)] max-[1000px]:gap-10 max-[680px]:mt-10 max-[680px]:grid-cols-1 max-[680px]:gap-8">
+      <div class="mt-10 grid grid-cols-1 gap-8 xl:mt-[98px] xl:grid-cols-[240px_minmax(0,1fr)] xl:gap-[88px]">
         <aside id="account-menu" class="pt-1" aria-label="Account navigation">
           <h2 class="mb-4 mt-0 text-[16px] font-semibold">
             Manage My Account
@@ -87,11 +88,11 @@
           </h2>
         </aside>
         <!-- Profile fields are prefilled with the reference's visible account details. -->
-        <form id="profile-form" class="rounded bg-white px-[85px] py-[40px] shadow-[0_1px_20px_rgba(0,0,0,0.06)] max-[1100px]:px-10 max-[680px]:px-5 max-[680px]:py-7" novalidate>
+        <form id="profile-form" class="rounded bg-white px-5 py-7 shadow-[0_1px_20px_rgba(0,0,0,0.06)] sm:px-8 xl:px-[85px] xl:py-[40px]" novalidate>
           <h1 class="mb-5 mt-0 text-[22px] font-medium text-exclusive">
             Edit Your Profile
           </h1>
-          <div class="grid grid-cols-2 gap-x-[50px] gap-y-6 max-[1000px]:gap-x-6 max-[680px]:grid-cols-1">
+          <div class="grid grid-cols-1 gap-x-6 gap-y-6 md:grid-cols-2 xl:grid-cols-2 xl:gap-x-[50px]">
             <label class="block text-[16px]">
               First Name
               <input id="first-name" class="mt-2 block h-[54px] w-full rounded bg-pale px-4 text-[16px] outline-none focus:ring-1 focus:ring-exclusive" type="text" value="Md" required>
@@ -134,7 +135,7 @@
             <button class="bg-transparent text-[16px]" type="reset">
               Cancel
             </button>
-            <button class="h-[60px] w-[228px] rounded bg-exclusive text-[16px] text-white max-[680px]:w-[180px]" type="submit">
+            <button class="h-11 w-full rounded bg-exclusive text-[16px] text-white sm:h-[60px] sm:w-[228px]" type="submit">
               Save Changes
             </button>
           </div>

@@ -11,16 +11,17 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 </head>
-<body data-page="404" class="m-0 min-h-screen bg-white font-poppins text-[16px] text-black antialiased">
+<body data-page="404" class="m-0 min-h-screen bg-white font-poppins text-[16px] text-black antialiased overflow-x-clip">
   
   <div id="site-topbar"></div><div id="site-header"></div>
   <!-- Error breadcrumb, message, and return-to-home action. -->
-  <main class="relative mx-auto h-[702px] w-[1170px] max-[1200px]:w-[calc(100%-48px)] max-[680px]:h-[540px] max-[680px]:w-[calc(100%-32px)]">
+    <!-- Responsive error text scales down while its action stays centered. -->
+<main class="relative mx-auto h-[540px] w-full max-w-[1170px] px-4 sm:h-[620px] sm:px-6 xl:h-[702px] xl:w-[1170px] xl:px-0">
     <nav class="mt-[82px] flex items-center gap-[14px] text-[14px] text-[#888888] max-[680px]:mt-[34px] max-[680px]:text-[13px]" aria-label="Breadcrumb"><a href="../index.html">Home</a><span>/</span><b class="font-normal text-[#111111]">404 Error</b></nav>
-    <section class="absolute left-1/2 top-[60%] w-[min(850px,calc(100%-40px))] -translate-x-1/2 -translate-y-1/2 text-center max-[680px]:top-[48%]" aria-labelledby="error-title">
-      <h1 id="error-title" class="mb-[34px] mt-0 text-[96px] font-medium leading-[1.1] tracking-[2px] max-[680px]:mb-6 max-[680px]:text-[clamp(48px,14vw,76px)] max-[680px]:tracking-normal">404 Not Found</h1>
+    <section class="absolute left-1/2 top-1/2 w-[min(850px,100%)] -translate-x-1/2 -translate-y-1/2 text-center xl:top-[60%]" aria-labelledby="error-title">
+      <h1 id="error-title" class="mb-6 mt-0 text-5xl font-medium leading-[1.1] tracking-normal sm:text-7xl sm:tracking-[2px] xl:mb-[34px] xl:text-[96px]">404 Not Found</h1>
       <p class="m-0 text-[18px] max-[680px]:text-[15px]">Your visited page not found. You may go home page.</p>
-      <a class="mt-20 inline-flex h-14 min-w-[255px] items-center justify-center rounded bg-exclusive text-[16px] text-white max-[680px]:mt-[42px]" href="../index.html">Back to home page</a>
+      <a class="mx-auto mt-12 inline-flex h-14 w-full max-w-[255px] items-center justify-center rounded bg-exclusive text-[16px] text-white sm:mt-16 xl:mt-20" href="../index.html">Back to home page</a>
     </section>
   </main>
   

@@ -15,14 +15,15 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   </head>
-  <body data-page="checkout" class="m-0 min-h-screen bg-white font-poppins text-[16px] text-black antialiased">
+  <body data-page="checkout" class="m-0 min-h-screen bg-white font-poppins text-[16px] text-black antialiased overflow-x-clip">
     
     <div id="site-topbar">
     </div>
     <div id="site-header">
     </div>
     <!-- Checkout breadcrumb, billing fields, and order summary. -->
-    <main class="mx-auto w-[1170px] pb-[135px] max-[1200px]:w-[calc(100%-48px)] max-[680px]:w-[calc(100%-32px)]">
+        <!-- Responsive billing and order summary stack below desktop width. -->
+<main class="mx-auto w-full max-w-[1170px] px-4 pb-16 sm:px-6 sm:pb-20 xl:w-[1170px] xl:px-0 xl:pb-[135px]">
       <nav class="mt-[72px] flex items-center gap-[14px] text-[14px] text-[#888888] max-[680px]:mt-[34px] max-[680px]:flex-wrap max-[680px]:text-[12px]" aria-label="Breadcrumb">
         <a href="account.html">
           Account
@@ -52,7 +53,7 @@
           CheckOut
         </b>
       </nav>
-      <div class="mt-[72px] grid grid-cols-[460px_1fr] gap-[168px] max-[1200px]:grid-cols-[minmax(0,1fr)_minmax(0,1fr)] max-[1200px]:gap-16 max-[900px]:grid-cols-1 max-[900px]:gap-10 max-[680px]:mt-10">
+      <div class="mt-10 grid grid-cols-1 gap-10 sm:mt-14 lg:grid-cols-[minmax(0,460px)_minmax(0,1fr)] lg:gap-10 xl:mt-[72px] xl:grid-cols-[460px_1fr] xl:gap-[168px]">
         <!-- Required billing inputs retain the reference labels and order. -->
         <form id="checkout-form" novalidate>
           <h1 class="mb-[35px] mt-0 text-[36px] font-medium leading-[1.2] max-[680px]:text-[30px]">
@@ -111,7 +112,7 @@
           </label>
         </form>
         <!-- Order lines, totals, payment options, and coupon field. -->
-        <section class="pt-[95px] max-[900px]:pt-0" aria-label="Order summary">
+        <section class="pt-0 lg:pt-10 xl:pt-[95px]" aria-label="Order summary">
           <div class="space-y-6">
             <div class="flex items-center justify-between">
               <div class="flex items-center gap-5">
@@ -187,7 +188,7 @@
             </label>
           </fieldset>
           <!-- Coupon application is shown but does not claim an online discount. -->
-          <form id="checkout-coupon" class="mt-[30px] flex gap-4 max-[680px]:flex-col" novalidate>
+          <form id="checkout-coupon" class="mt-6 flex flex-col gap-4 sm:mt-[30px] lg:flex-row" novalidate>
             <label class="sr-only" for="checkout-coupon-code">
               Coupon Code
             </label>

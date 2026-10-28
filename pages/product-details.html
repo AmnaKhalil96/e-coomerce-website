@@ -15,14 +15,15 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   </head>
-  <body data-page="product-details" class="m-0 min-h-screen bg-white font-poppins text-[16px] text-black antialiased">
+  <body data-page="product-details" class="m-0 min-h-screen bg-white font-poppins text-[16px] text-black antialiased overflow-x-clip">
     
     <div id="site-topbar">
     </div>
     <div id="site-header">
     </div>
     <!-- Breadcrumb and product gallery with the supplied controller views. -->
-    <main class="mx-auto w-[1170px] max-[1200px]:w-[calc(100%-48px)] max-[680px]:w-[calc(100%-32px)]">
+        <!-- Responsive product gallery and details collapse into columns that fit the viewport. -->
+<main class="mx-auto w-full max-w-[1170px] px-4 pb-4 sm:px-6 xl:w-[1170px] xl:px-0">
       <nav class="mt-[72px] flex items-center gap-[14px] text-[14px] text-[#888888] max-[680px]:mt-8 max-[680px]:text-[12px]" aria-label="Breadcrumb">
         <a href="account.html">
           Account
@@ -40,28 +41,28 @@
           Havic HV G-92 Gamepad
         </b>
       </nav>
-      <section class="mt-[74px] grid grid-cols-[155px_455px_365px] items-start gap-[27px] max-[1200px]:grid-cols-[120px_minmax(300px,1fr)_340px] max-[1200px]:gap-5 max-[900px]:grid-cols-[100px_minmax(250px,1fr)] max-[900px]:gap-5 max-[900px]:[&>div:last-child]:col-span-2 max-[680px]:mt-10 max-[680px]:grid-cols-1">
+      <section class="mt-8 grid min-w-0 grid-cols-1 items-start gap-5 sm:mt-10 lg:grid-cols-[100px_minmax(0,1fr)] lg:gap-5 xl:mt-[74px] xl:grid-cols-[155px_455px_365px] xl:gap-[27px]">
         <!-- Four thumbnail views allow the main product image to be changed. -->
-        <div class="flex flex-col gap-[15px] max-[680px]:order-2 max-[680px]:flex-row">
-          <button class="gallery-thumb h-[126px] w-[155px] rounded bg-pale p-3 ring-2 ring-transparent aria-pressed:ring-exclusive max-[1200px]:w-[120px] max-[900px]:h-[100px] max-[900px]:w-[100px] max-[680px]:h-[78px] max-[680px]:w-[78px]" type="button" aria-pressed="false" aria-label="View controller on stand">
+        <div class="order-2 flex min-w-0 flex-row gap-3 overflow-x-auto lg:order-none lg:col-start-1 lg:row-start-1 lg:flex-col lg:gap-[15px] lg:overflow-visible xl:gap-[15px]">
+          <button class="gallery-thumb h-[78px] w-[78px] shrink-0 rounded bg-pale p-3 ring-2 ring-transparent aria-pressed:ring-exclusive lg:h-[100px] lg:w-[100px] xl:h-[126px] xl:w-[155px]" type="button" aria-pressed="false" aria-label="View controller on stand">
             <img class="h-full w-full object-contain" src="../assets/images/products/gamepad-view-standing.png" alt="Controller on stand">
           </button>
-          <button class="gallery-thumb h-[126px] w-[155px] rounded bg-pale p-3 ring-2 ring-transparent aria-pressed:ring-exclusive max-[1200px]:w-[120px] max-[900px]:h-[100px] max-[900px]:w-[100px] max-[680px]:h-[78px] max-[680px]:w-[78px]" type="button" aria-pressed="true" aria-label="View front of controller">
+          <button class="gallery-thumb h-[78px] w-[78px] shrink-0 rounded bg-pale p-3 ring-2 ring-transparent aria-pressed:ring-exclusive lg:h-[100px] lg:w-[100px] xl:h-[126px] xl:w-[155px]" type="button" aria-pressed="true" aria-label="View front of controller">
             <img class="h-full w-full object-contain" src="../assets/images/products/gamepad-view-front.png" alt="Front of controller">
           </button>
-          <button class="gallery-thumb h-[126px] w-[155px] rounded bg-pale p-3 ring-2 ring-transparent aria-pressed:ring-exclusive max-[1200px]:w-[120px] max-[900px]:h-[100px] max-[900px]:w-[100px] max-[680px]:h-[78px] max-[680px]:w-[78px]" type="button" aria-pressed="false" aria-label="View controller side">
+          <button class="gallery-thumb h-[78px] w-[78px] shrink-0 rounded bg-pale p-3 ring-2 ring-transparent aria-pressed:ring-exclusive lg:h-[100px] lg:w-[100px] xl:h-[126px] xl:w-[155px]" type="button" aria-pressed="false" aria-label="View controller side">
             <img class="h-full w-full object-contain" src="../assets/images/products/gamepad-view-angle-one.png" alt="Controller side view">
           </button>
-          <button class="gallery-thumb h-[126px] w-[155px] rounded bg-pale p-3 ring-2 ring-transparent aria-pressed:ring-exclusive max-[1200px]:w-[120px] max-[900px]:h-[100px] max-[900px]:w-[100px] max-[680px]:h-[78px] max-[680px]:w-[78px]" type="button" aria-pressed="false" aria-label="View angled controller">
+          <button class="gallery-thumb h-[78px] w-[78px] shrink-0 rounded bg-pale p-3 ring-2 ring-transparent aria-pressed:ring-exclusive lg:h-[100px] lg:w-[100px] xl:h-[126px] xl:w-[155px]" type="button" aria-pressed="false" aria-label="View angled controller">
             <img class="h-full w-full object-contain" src="../assets/images/products/gamepad-view-angle-two.png" alt="Angled controller">
           </button>
         </div>
         <!-- Main product image starts on the reference's front controller view. -->
-        <div class="flex h-[547px] w-[455px] items-center justify-center rounded bg-pale p-5 max-[1200px]:h-[500px] max-[1200px]:w-full max-[900px]:h-[440px] max-[680px]:order-1 max-[680px]:h-[340px]">
+        <div class="order-1 flex h-[320px] w-full min-w-0 items-center justify-center rounded bg-pale p-4 sm:h-[400px] lg:order-none lg:col-start-2 lg:row-start-1 lg:h-[440px] xl:h-[547px] xl:w-[455px] xl:p-5">
           <img id="main-product-image" class="h-full w-full object-contain" src="../assets/images/products/gamepad-view-front.png" alt="Havic HV G-92 Gamepad">
         </div>
         <!-- Product title, ratings, purchase controls, and delivery information. -->
-        <div class="ml-[37px] w-[365px] max-[1200px]:ml-0 max-[1200px]:w-[340px] max-[900px]:col-span-2 max-[900px]:w-full max-[680px]:order-3">
+        <div class="order-3 min-w-0 w-full lg:order-none lg:col-span-2 lg:row-start-2 xl:col-span-1 xl:col-start-3 xl:row-start-1 xl:ml-[37px] xl:w-[365px]">
           <h1 class="mb-[14px] mt-0 text-[24px] font-semibold leading-[1.3]">
             Havic HV G-92 Gamepad
           </h1>
@@ -94,7 +95,7 @@
             <span class="text-[20px]">
               Colours:
             </span>
-            <button class="h-[18px] w-[18px] rounded-full border-2 border-white bg-[#A0BCE0] ring-1 ring-black" type="button" aria-label="Blue color">
+            <button class="h-[18px] w-[18px] rounded-full border-2 max-[680px]:h-11 max-[680px]:w-11 border-white bg-[#A0BCE0] ring-1 ring-black" type="button" aria-label="Blue color">
             </button>
             <button class="h-[18px] w-[18px] rounded-full bg-[#E07575]" type="button" aria-label="Red color">
             </button>
@@ -103,19 +104,19 @@
             <span class="mr-1 text-[20px]">
               Size:
             </span>
-            <button class="size-choice h-8 min-w-8 rounded border border-[#999999] px-2 text-[12px]" type="button">
+            <button class="size-choice h-8 min-w-8 max-[680px]:h-11 max-[680px]:min-w-11 rounded border border-[#999999] px-2 text-[12px]" type="button">
               XS
             </button>
-            <button class="size-choice h-8 min-w-8 rounded border border-[#999999] px-2 text-[12px]" type="button">
+            <button class="size-choice h-8 min-w-8 max-[680px]:h-11 max-[680px]:min-w-11 rounded border border-[#999999] px-2 text-[12px]" type="button">
               S
             </button>
-            <button class="size-choice h-8 min-w-8 rounded border border-exclusive bg-exclusive px-2 text-[12px] text-white" type="button" aria-pressed="true">
+            <button class="size-choice h-8 min-w-8 max-[680px]:h-11 max-[680px]:min-w-11 rounded border border-exclusive bg-exclusive px-2 text-[12px] text-white" type="button" aria-pressed="true">
               M
             </button>
-            <button class="size-choice h-8 min-w-8 rounded border border-[#999999] px-2 text-[12px]" type="button">
+            <button class="size-choice h-8 min-w-8 max-[680px]:h-11 max-[680px]:min-w-11 rounded border border-[#999999] px-2 text-[12px]" type="button">
               L
             </button>
-            <button class="size-choice h-8 min-w-8 rounded border border-[#999999] px-2 text-[12px]" type="button">
+            <button class="size-choice h-8 min-w-8 max-[680px]:h-11 max-[680px]:min-w-11 rounded border border-[#999999] px-2 text-[12px]" type="button">
               XL
             </button>
           </div>
@@ -135,7 +136,7 @@
             <a class="flex h-10 flex-1 items-center justify-center rounded bg-exclusive text-[14px] text-white" href="checkout.html">
               Buy Now
             </a>
-            <button id="product-wishlist" class="grid h-10 w-10 place-items-center rounded border border-[#999999] text-[26px]" type="button" aria-label="Add to wishlist" aria-pressed="false">
+            <button id="product-wishlist" class="grid h-10 w-10 place-items-center rounded border max-[680px]:h-11 max-[680px]:w-11 border-[#999999] text-[26px]" type="button" aria-label="Add to wishlist" aria-pressed="false">
               ♡
             </button>
           </div>
@@ -172,13 +173,13 @@
         </div>
       </section>
       <!-- Related products match the product row in the reference image. -->
-      <section id="related" class="mb-[100px] mt-[128px] max-[680px]:mt-20">
+      <section id="related" class="mb-16 mt-12 sm:mb-20 sm:mt-16 xl:mb-[100px] xl:mt-[128px]">
         <h2 class="mb-[40px] mt-0 flex items-center gap-[14px] text-[16px] font-medium text-exclusive">
           <span class="h-10 w-[18px] rounded-[3px] bg-exclusive">
           </span>
           Related Item
         </h2>
-        <div id="related-products" class="grid grid-cols-4 gap-[30px] max-[1000px]:grid-cols-2 max-[680px]:grid-cols-1">
+        <div id="related-products" class="grid grid-cols-2 gap-4 md:grid-cols-3 lg:grid-cols-4 xl:gap-[30px]">
         </div>
       </section>
     </main>

@@ -15,14 +15,15 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   </head>
-  <body data-page="cart" class="m-0 min-h-screen bg-white font-poppins text-[16px] text-black antialiased">
+  <body data-page="cart" class="m-0 min-h-screen bg-white font-poppins text-[16px] text-black antialiased overflow-x-clip">
     
     <div id="site-topbar">
     </div>
     <div id="site-header">
     </div>
     <!-- Cart breadcrumb, items, coupon controls, and order totals. -->
-    <main class="mx-auto w-[1170px] pb-[125px] max-[1200px]:w-[calc(100%-48px)] max-[680px]:w-[calc(100%-32px)]">
+        <!-- Responsive cart controls wrap below tablet width to keep each item readable. -->
+<main class="mx-auto w-full max-w-[1170px] px-4 pb-16 sm:px-6 sm:pb-20 xl:w-[1170px] xl:px-0 xl:pb-[125px]">
       <nav class="mt-[82px] flex items-center gap-[14px] text-[14px] text-[#888888] max-[680px]:mt-[34px] max-[680px]:text-[13px]" aria-label="Breadcrumb">
         <a href="../index.html">
           Home
@@ -53,7 +54,7 @@
       <section id="cart-items" class="mt-10 space-y-[38px]" aria-label="Cart items">
         <article class="cart-row grid min-h-[102px] grid-cols-[1.2fr_1fr_1fr_.7fr] items-center rounded bg-white px-10 shadow-[0_1px_20px_rgba(0,0,0,0.06)] max-[680px]:grid-cols-[1fr_auto] max-[680px]:gap-x-3 max-[680px]:gap-y-2 max-[680px]:px-4 max-[680px]:py-4" data-price="650">
           <div class="flex items-center gap-5">
-            <button class="remove-cart-item grid h-[18px] w-[18px] place-items-center rounded-full bg-exclusive text-[14px] leading-none text-white" type="button" aria-label="Remove LCD Monitor">
+            <button class="remove-cart-item grid h-[18px] w-[18px] place-items-center rounded-full bg-exclusive text-[14px] max-[680px]:h-11 max-[680px]:w-11 leading-none text-white" type="button" aria-label="Remove LCD Monitor">
               ×
             </button>
             <img class="h-12 w-12 object-contain" src="../assets/images/products/ips-lcd-gaming-monitor.png" alt="LCD Monitor">
@@ -99,28 +100,28 @@
         </article>
       </section>
       <!-- Continue shopping and update actions. -->
-      <div class="mt-6 flex items-center justify-between">
-        <a class="flex h-14 items-center rounded border border-[#999999] px-12 text-[16px] font-medium max-[680px]:px-4 max-[680px]:text-[13px]" href="../index.html">
+      <div class="mt-6 flex flex-wrap items-center justify-between gap-3">
+        <a class="flex min-h-11 items-center justify-center rounded border border-[#999999] px-4 text-sm font-medium sm:h-14 sm:px-8 sm:text-[16px] xl:px-12" href="../index.html">
           Return To Shop
         </a>
-        <button id="update-cart" class="h-14 rounded border border-[#999999] px-12 text-[16px] font-medium max-[680px]:px-4 max-[680px]:text-[13px]" type="button">
+        <button id="update-cart" class="min-h-11 rounded border border-[#999999] px-4 text-sm font-medium sm:h-14 sm:px-8 sm:text-[16px] xl:px-12" type="button">
           Update Cart
         </button>
       </div>
       <!-- Coupon entry and cart total remain side by side on desktop. -->
-      <div class="mt-20 grid grid-cols-[1fr_470px] items-start gap-8 max-[900px]:grid-cols-1">
-        <form id="coupon-form" class="flex items-center gap-4 max-[680px]:flex-wrap" novalidate>
+      <div class="mt-10 grid grid-cols-1 items-start gap-8 sm:mt-14 xl:mt-20 xl:grid-cols-[1fr_470px]">
+        <form id="coupon-form" class="flex flex-col items-stretch gap-4 sm:flex-row sm:items-center" novalidate>
           <label class="sr-only" for="coupon-code">
             Coupon Code
           </label>
-          <input id="coupon-code" class="h-14 w-[300px] rounded border border-[#111111] px-6 text-[16px] outline-none max-[680px]:w-full" placeholder="Coupon Code">
+          <input id="coupon-code" class="h-14 w-full min-w-0 rounded border border-[#111111] px-4 text-[16px] outline-none sm:px-6 xl:w-[300px]" placeholder="Coupon Code">
           <button class="h-14 rounded bg-exclusive px-12 text-[16px] text-white max-[680px]:w-full" type="submit">
             Apply Coupon
           </button>
           <p id="coupon-message" class="hidden w-full text-[13px] text-exclusive" role="status" aria-live="polite">
           </p>
         </form>
-        <section class="rounded border-2 border-[#111111] p-[22px]" aria-labelledby="cart-total-title">
+        <section class="min-w-0 rounded border-2 border-[#111111] p-4 sm:p-[22px]" aria-labelledby="cart-total-title">
           <h2 id="cart-total-title" class="mb-6 mt-0 text-[20px] font-medium">
             Cart Total
           </h2>

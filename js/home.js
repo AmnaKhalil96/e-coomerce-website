@@ -31,35 +31,47 @@
     ]
   };
 
-  /* Build one matching product card for each object in the page data. */
-  function createProductCard(item) {
+  /* Build an image, details, and responsive actions for one product. */
+  function createProductCard(item, rowId) {
     const card = document.createElement('article');
-    card.className = 'group w-[270px] shrink-0';
-    /* Link only the matching Havit gamepad to its supplied detail page. */
-    const productImage = item.name === 'HAVIT HV-G92 Gamepad'
-      ? `<a class="flex h-[82%] w-[82%] items-center justify-center" href="pages/product-details.html"><img class="h-full w-full object-contain" src="${image(item.image)}" alt="${item.name}"></a>`
-      : `<img class="h-[82%] w-[82%] object-contain" src="${image(item.image)}" alt="${item.name}">`;
-    const productName = item.name === 'HAVIT HV-G92 Gamepad'
-      ? `<a href="pages/product-details.html">${item.name}</a>`
-      : item.name;
-    const badge = item.badge ? `<span class="absolute left-3 top-3 rounded bg-exclusive px-3 py-1 text-[12px] text-white ${item.badge === 'NEW' ? 'bg-music text-black' : ''}">${item.badge}</span>` : '';
-    const swatches = item.colors ? `<div class="mt-1 flex gap-1">${item.colors.map(color => `<span class="h-[14px] w-[14px] rounded-full border border-[#999999]" style="background-color:${color}" aria-label="Color option"></span>`).join('')}</div>` : '';
-    card.innerHTML = `
-      <div class="relative flex h-[250px] items-center justify-center bg-pale">
-        ${productImage}
-        ${badge}
-        <div class="absolute right-3 top-3 grid gap-[9px]">
-          <button class="heart flex h-[34px] w-[34px] items-center justify-center rounded-full bg-white" type="button" aria-label="Add to wishlist"><img class="h-[18px] w-[18px]" src="${image('shared/heart-outline.png')}" alt=""></button>
-          <button class="flex h-[34px] w-[34px] items-center justify-center rounded-full bg-white" type="button" aria-label="View product"><img class="h-[18px] w-[18px]" src="${image('shared/quick-view.png')}" alt=""></button>
-        </div>
-        <button class="absolute bottom-0 left-0 h-[42px] w-full bg-black pt-[10px] text-center text-white opacity-0 transition-opacity group-hover:opacity-100" type="button">Add To Cart</button>
-      </div>
-      <h3 class="mb-[5px] mt-3 text-[14px] font-medium">${productName}</h3>
-      <div class="font-medium text-exclusive">$${item.price}${item.oldPrice ? `<span class="ml-[10px] text-[#777777] line-through">$${item.oldPrice}</span>` : ''}</div>
-      <div class="mt-[6px] flex items-center gap-[7px]"><img class="h-5 w-[100px] object-contain" src="${image('shared/five-stars.png')}" alt="Five stars"><small class="text-[#777777]">${item.reviews}</small></div>
-      ${swatches}`;
+    const isExploreCard = rowId === 'explore-track';
+    // Responsive rails peek on touch screens; the product grid fills its own columns.
+    card.className = isExploreCard
+      ? 'group grid min-w-0 grid-cols-1 lg:grid-cols-[max-content_1fr] lg:gap-x-2'
+      : 'group min-w-[70%] w-[72vw] shrink-0 sm:min-w-[45%] sm:w-[45vw] md:min-w-[30%] md:w-[30vw] xl:min-w-[270px] xl:w-[270px]';
 
-    /* Toggle the heart graphic and its selected red tint on this card. */
+    const detailGrid = isExploreCard;
+    const imageClasses = 'h-[82%] w-[82%] object-contain max-lg:h-full max-lg:w-full max-lg:p-3';
+    const productImage = item.name === 'HAVIT HV-G92 Gamepad'
+      ? '<a class="flex h-full w-full items-center justify-center xl:h-[82%] xl:w-[82%]" href="pages/product-details.html"><img class="' + imageClasses + '" src="' + image(item.image) + '" alt="' + item.name + '"></a>'
+      : '<img class="' + imageClasses + '" src="' + image(item.image) + '" alt="' + item.name + '">';
+    const productName = item.name === 'HAVIT HV-G92 Gamepad'
+      ? '<a href="pages/product-details.html">' + item.name + '</a>'
+      : item.name;
+    const badge = item.badge
+      ? '<span class="absolute left-2 top-2 rounded bg-exclusive px-2 py-1 text-[10px] text-white sm:left-3 sm:top-3 sm:px-3 sm:text-[12px] ' + (item.badge === 'NEW' ? 'bg-music text-black' : '') + '">' + item.badge + '</span>'
+      : '';
+    const swatches = item.colors
+      ? '<div class="mt-1 flex gap-1 lg:col-span-2 lg:row-start-4">' + item.colors.map(color => '<span class="h-[14px] w-[14px] rounded-full border border-[#999999]" style="background-color:' + color + '" aria-label="Color option"></span>').join('') + '</div>'
+      : '';
+    const exploreImageLayout = detailGrid ? 'lg:col-span-2' : '';
+    const exploreNameLayout = detailGrid ? 'lg:col-span-2' : '';
+    const explorePriceLayout = detailGrid ? 'lg:col-start-1 lg:row-start-3' : '';
+    const exploreRatingLayout = detailGrid ? 'lg:col-start-2 lg:row-start-3 lg:mt-0' : '';
+
+    card.innerHTML =
+      '<div class="relative flex h-[170px] min-w-0 items-center justify-center bg-pale p-2 sm:h-[210px] xl:h-[250px] xl:p-0 ' + exploreImageLayout + '">' +
+      productImage + badge +
+      '<div class="absolute right-2 top-2 grid gap-2 sm:right-3 sm:top-3 sm:gap-[9px]">' +
+      '<button class="heart flex h-7 w-7 items-center justify-center rounded-full bg-white sm:h-[34px] sm:w-[34px]" type="button" aria-label="Add to wishlist"><img class="h-[18px] w-[18px]" src="' + image('shared/heart-outline.png') + '" alt=""></button>' +
+      '<button class="flex h-7 w-7 items-center justify-center rounded-full bg-white sm:h-[34px] sm:w-[34px]" type="button" aria-label="View product"><img class="h-[18px] w-[18px]" src="' + image('shared/quick-view.png') + '" alt=""></button>' +
+      '</div><button class="absolute bottom-0 left-0 w-full whitespace-nowrap bg-black py-2 text-center text-sm text-white opacity-0 transition-opacity group-hover:opacity-100 [@media(hover:none)]:translate-y-0 [@media(hover:none)]:opacity-100 xl:h-[42px] xl:pt-[10px]" type="button">Add To Cart</button></div>' +
+      '<h3 class="mb-1 mt-2 min-w-0 line-clamp-2 text-sm font-medium leading-snug sm:mb-[5px] sm:mt-3 sm:text-base xl:text-[16px] xl:leading-[1.5] ' + exploreNameLayout + '">' + productName + '</h3>' +
+      '<div class="whitespace-nowrap font-medium text-exclusive xl:text-[16px] ' + explorePriceLayout + '">$' + item.price + (item.oldPrice ? '<span class="ml-2 text-[#777777] line-through sm:ml-[10px]">$' + item.oldPrice + '</span>' : '') + '</div>' +
+      '<div class="mt-1 flex min-w-0 items-center gap-1.5 sm:mt-[6px] sm:gap-[7px] ' + exploreRatingLayout + '"><img class="h-4 w-20 shrink-0 object-contain sm:h-5 sm:w-[100px]" src="' + image('shared/five-stars.png') + '" alt="Five stars"><small class="whitespace-nowrap text-[11px] text-[#777777] sm:text-[12px]">' + item.reviews + '</small></div>' +
+      swatches;
+
+    // Toggle the saved state with the supplied outline and filled heart icons.
     card.querySelector('.heart').addEventListener('click', event => {
       const button = event.currentTarget;
       const icon = button.querySelector('img');
@@ -80,12 +92,11 @@
     ];
     collections.forEach(([id, items]) => {
       const row = document.getElementById(id);
-      items.forEach(item => row?.append(createProductCard(item)));
+      items.forEach(item => row?.append(createProductCard(item, id)));
     });
-    document.getElementById('explore-track')?.classList.add('grid-cols-4');
   }
 
-  /* Make product arrows move one card in Flash Sales and preserve other row behavior. */
+  /* Measure card width and gap for arrows so distances follow each responsive row. */
   function enableProductArrows() {
     document.querySelectorAll('[data-scroll]').forEach(button => {
       button.addEventListener('click', () => {
@@ -99,7 +110,7 @@
           flashAutoSlide?.resetTimer();
           return;
         }
-        row.scrollBy({ left: Number(button.dataset.dir) * 600, behavior: 'smooth' });
+        row.scrollBy({ left: Number(button.dataset.dir) * getCardStep(row), behavior: 'smooth' });
       });
     });
   }
